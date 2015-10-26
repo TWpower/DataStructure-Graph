@@ -1,7 +1,9 @@
 package impl;
 
 import base.Data;
+import base.Edge;
 import base.Vertex;
+import base.VertexWithEdge;
 
 import java.util.*;
 
@@ -10,9 +12,7 @@ import java.util.*;
  */
 public class DirectedGraph {
 
-
-
-    private LinkedList<Vertex> vertices; // 그래프 안에 vertex들
+    private LinkedList<VertexWithEdge> vertices; // 그래프 안에 vertex들
     private int size; //number of vertieces
 
     // 그래프 생성자
@@ -27,7 +27,7 @@ public class DirectedGraph {
     //Data 로 추가
     public boolean insertVertex(Data data) {
 
-        Vertex tmpVertex = new Vertex(data);
+        VertexWithEdge tmpVertex = new VertexWithEdge(data);
 
         // 만약 그래프가 vertex가 0 개이면 첫 번째에 추가
         if (vertices.size() == 0) {
@@ -76,12 +76,12 @@ public class DirectedGraph {
     }
 
     //key 값으로 찾는다.
-    public Vertex deleteVertex(int key) {
+    public VertexWithEdge deleteVertex(int key) {
         //key == id in Data
 
         int indexOfVertexList = 0;
 
-        Vertex tmpVertex;
+        VertexWithEdge tmpVertex;
 
         // Degree들이 0이 아닌 경우우
        if(retrieveVertex(key).outDegree !=0 || retrieveVertex(key).inDegree !=0){
@@ -110,7 +110,7 @@ public class DirectedGraph {
     }
 
     // 목적지 vertex와 도착지 vertex
-    public boolean insertEdge(Vertex vertexFrom, Vertex vertexTo) {
+    public boolean insertEdge(VertexWithEdge vertexFrom, VertexWithEdge vertexTo) {
 
         //해당하는 vertexFrom또는 vertexTo가 그래프에 없다면
         if (vertices.indexOf(vertexFrom) == -1 || vertices.indexOf(vertexTo) == -1)
@@ -119,11 +119,14 @@ public class DirectedGraph {
             //vertexFrom이 그래프에 있다면
         else {
 
+            // 추가할 edge
+            Edge edge = new Edge(vertexTo, 0);
+
             int indexOfVertexList = 0;
 
             //만약 처음 넣는다면
             if (vertexFrom.getEdges().size() == 0){
-                vertexFrom.getEdges().add(vertexTo);
+                vertexFrom.getEdges().add(edge);
                 vertexFrom.outDegree++;
                 vertexTo.inDegree++;
                 return true;
@@ -132,7 +135,7 @@ public class DirectedGraph {
             else {
                 //인덱스를 올리면서 edge들을 비교
                 while (indexOfVertexList < vertexFrom.getEdges().size()
-                       && vertexTo.getData().compareTo(vertexFrom.getEdges().get(indexOfVertexList).getData()) == 1
+                       && vertexTo.getData().compareTo(vertexFrom.getEdges().get(indexOfVertexList).getVertex().getData()) == 1
                 ) {
 
                     indexOfVertexList++;
@@ -141,7 +144,7 @@ public class DirectedGraph {
 
                 //중복된 값이 있으면 Return
                 if (indexOfVertexList < vertexFrom.getEdges().size()
-                        && vertexTo.getData().compareTo(vertexFrom.getEdges().get(indexOfVertexList).getData()) == 0) {
+                        && vertexTo.getData().compareTo(vertexFrom.getEdges().get(indexOfVertexList).getVertex().getData()) == 0) {
                     System.out.println("중복된 값 오류");
                     return false;
                 }
@@ -150,10 +153,10 @@ public class DirectedGraph {
                 else {
 
                     if(indexOfVertexList < vertexFrom.getEdges().size())
-                    vertexFrom.getEdges().add(indexOfVertexList, vertexTo);
+                    vertexFrom.getEdges().add(indexOfVertexList, edge);
 
                     else
-                    vertexFrom.getEdges().addLast(vertexTo);
+                    vertexFrom.getEdges().addLast(edge);
 
                     vertexFrom.outDegree++;
                     vertexTo.inDegree++;
@@ -200,7 +203,7 @@ public class DirectedGraph {
     }
 
     // key 값으로 찾기
-    public Vertex retrieveVertex(int key) {
+    public VertexWithEdge retrieveVertex(int key) {
         //key == id in Data
 
         int indexOfVertexList;
@@ -221,7 +224,7 @@ public class DirectedGraph {
 
     public void depthFirstSearch() {
 
-        Stack<Vertex> stack = new Stack<>();
+        Stack<VertexWithEdge> stack = new Stack<>();
 
         System.out.print("DFS : ");
 
@@ -235,7 +238,7 @@ public class DirectedGraph {
         // 하나하나의 vertex들을 확인
         for (int indexOfVertexList = 0; indexOfVertexList < vertices.size(); indexOfVertexList++) {
 
-            Vertex currentGraphVertex = vertices.get(indexOfVertexList);
+            VertexWithEdge currentGraphVertex = vertices.get(indexOfVertexList);
 
             // processed가 0이라면
             if (currentGraphVertex.processed < 2) {
@@ -250,7 +253,7 @@ public class DirectedGraph {
             // 스택이 빌 때까지 검사
             while (!stack.isEmpty()) {
 
-                Vertex vertexFromStack = stack.pop();
+                VertexWithEdge vertexFromStack = stack.pop();
                 //Stack 에서 꺼내면 2로 flag 처리
                 if(vertexFromStack.processed != 2) {
                     vertexFromStack.processed = 2;
@@ -263,10 +266,10 @@ public class DirectedGraph {
                      edgeIndex >= 0 ; edgeIndex--) {
 
 
-                    if (vertexFromStack.getEdges().get(edgeIndex).processed != 2) {
-                        stack.push(vertexFromStack.getEdges().get(edgeIndex));
+                    if (vertexFromStack.getEdges().get(edgeIndex).getVertex().processed != 2) {
+                        stack.push(vertexFromStack.getEdges().get(edgeIndex).getVertex());
                         // 스택에 추가했으니
-                        vertexFromStack.getEdges().get(edgeIndex).processed = 1;
+                        vertexFromStack.getEdges().get(edgeIndex).getVertex().processed = 1;
                     }
 
                 }
@@ -280,7 +283,7 @@ public class DirectedGraph {
     public void breadthFirstSearch() {
 
         // 실질적으로 Queue와 LinkedList를 같은 방식으로 사용 할 수 있기에 LinkedList 사용
-        LinkedList<Vertex> queue = new LinkedList<>();
+        LinkedList<VertexWithEdge> queue = new LinkedList<>();
 
         System.out.print("BFS : ");
 
@@ -294,7 +297,7 @@ public class DirectedGraph {
         // 하나하나의 vertex들을 확인
         for (int indexOfVertexList = 0; indexOfVertexList < vertices.size(); indexOfVertexList++) {
 
-            Vertex currentGraphVertex = vertices.get(indexOfVertexList);
+            VertexWithEdge currentGraphVertex = vertices.get(indexOfVertexList);
 
             // processed가 0이라면
             if (currentGraphVertex.processed < 2) {
@@ -309,7 +312,7 @@ public class DirectedGraph {
             // queue가 빌 때까지 검사
             while (!queue.isEmpty()) {
 
-            Vertex vertexFromQueue = queue.removeFirst();
+            VertexWithEdge vertexFromQueue = queue.removeFirst();
                 //Stack 에서 꺼내면 2로 flag 처리
                 vertexFromQueue.processed = 2;
                 System.out.print(vertexFromQueue.getData().id + " ");
@@ -318,11 +321,11 @@ public class DirectedGraph {
                 for (int edgeIndex = 0; edgeIndex < vertexFromQueue.getEdges().size(); edgeIndex++) {
 
                     // queue에 추가 한적이 없다면
-                    if (vertexFromQueue.getEdges().get(edgeIndex).processed == 0) {
-                        queue.add(vertexFromQueue.getEdges().get(edgeIndex));
+                    if (vertexFromQueue.getEdges().get(edgeIndex).getVertex().processed == 0) {
+                        queue.add(vertexFromQueue.getEdges().get(edgeIndex).getVertex());
 
                         // queue에 추가했으니
-                        vertexFromQueue.getEdges().get(edgeIndex).processed = 1;
+                        vertexFromQueue.getEdges().get(edgeIndex).getVertex().processed = 1;
                     }
                 }
 
@@ -358,7 +361,7 @@ public class DirectedGraph {
 
     }
 
-    public void printEdges(Vertex vertex) {
+    public void printEdges(VertexWithEdge vertex) {
 
         // vertex가 있는지 확인
         if (vertices.indexOf(vertex) == -1) {
@@ -372,7 +375,7 @@ public class DirectedGraph {
                 // 출력
                 for (int index = 0; index < vertex.getEdges().size(); index++) {
 
-                    System.out.print(vertex.getEdges().get(index).getData().id + " -> ");
+                    System.out.print(vertex.getEdges().get(index).getVertex().getData().id + " -> ");
 
                 }
             }
@@ -395,7 +398,7 @@ public class DirectedGraph {
             // vertex
             for (int vertexIndex = 0; vertexIndex < vertices.size(); vertexIndex++) {
 
-                Vertex currentVertex = vertices.get(vertexIndex);
+                VertexWithEdge currentVertex = vertices.get(vertexIndex);
 
                 System.out.print(currentVertex.getData().id + " : ");
 
@@ -455,7 +458,7 @@ public class DirectedGraph {
 
                 while(numOfEdges < vertices.get(row).getEdges().size()){
 
-                    adjencyMatrix[row][hashMap.get(vertices.get(row).getEdges().get(numOfEdges).getData().id)] = 1;
+                    adjencyMatrix[row][hashMap.get(vertices.get(row).getEdges().get(numOfEdges).getVertex().getData().id)] = 1;
 
                     numOfEdges++;
                 }
