@@ -1,7 +1,6 @@
 package impl;
 
 import base.Data;
-import base.Header;
 import base.Vertex;
 
 import java.util.*;
@@ -12,7 +11,8 @@ import java.util.*;
 public class DirectedGraph {
 
 
-    private LinkedList<Vertex> vertices;
+
+    private LinkedList<Vertex> vertices; // 그래프 안에 vertex들
     private int size; //number of vertieces
 
     // 그래프 생성자
@@ -406,9 +406,9 @@ public class DirectedGraph {
 
     }
 
-    public void printAdjencyMatrix() {
+    public void printAdjacencyMatrix() {
 
-        int [][] adjencyMatrix = makeAdjencyMatrix();
+        int [][] adjencyMatrix = makeAdjacencyMatrix();
 
         for(int i = 0; i<vertices.size() ; i++){
             for(int j = 0 ; j < vertices.size() ; j++){
@@ -423,7 +423,7 @@ public class DirectedGraph {
 
     }
 
-    public int[][] makeAdjencyMatrix(){
+    public int[][] makeAdjacencyMatrix(){
 
         //만약 그래프가 없다면
         if(vertices.size() == 0)

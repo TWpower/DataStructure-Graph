@@ -11,7 +11,7 @@ public class Vertex {
     private Data data;
     public int inDegree;
     public int outDegree;
-    public int processed;
+    public int processed; //DFS, BFS
 
     public Vertex(Data data) {
 
