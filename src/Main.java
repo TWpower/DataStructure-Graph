@@ -79,6 +79,9 @@ public class Main {
         directedGraph.breadthFirstSearch();
         System.out.println();
 
+        // DFS_RECURSION
+        directedGraph.depthFirstSearchByRecursion();
+
 
         /***
          * Undirected Graph

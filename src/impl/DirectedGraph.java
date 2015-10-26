@@ -171,7 +171,7 @@ public class DirectedGraph {
     }
 
     // 목적지 vertex와 도착지 vertex
-    public boolean deleteEdge(Vertex vertexFrom, Vertex vertexTo) {
+    public boolean deleteEdge(VertexWithEdge vertexFrom, VertexWithEdge vertexTo) {
 
         //해당하는 vertexFrom또는 vertexTo가 그래프에 없다면
         if (vertices.indexOf(vertexFrom) == -1 || vertices.indexOf(vertexTo) == -1)
@@ -254,7 +254,7 @@ public class DirectedGraph {
             while (!stack.isEmpty()) {
 
                 VertexWithEdge vertexFromStack = stack.pop();
-                //Stack 에서 꺼내면 2로 flag 처리
+                //Stack 에서 꺼내면 2로 flag 처리 그리고 stack에 있으면 무조건 processed=1임
                 if(vertexFromStack.processed != 2) {
                     vertexFromStack.processed = 2;
                     System.out.print(vertexFromStack.getData().id + " ");
@@ -277,6 +277,46 @@ public class DirectedGraph {
             }
 
         }
+
+    }
+
+    public void depthFirstSearchByRecursion(){
+
+        // vertex에서 processed를 모두 0으로 바꿈
+        for (int indexOfVertexList = 0; indexOfVertexList < vertices.size(); indexOfVertexList++) {
+
+            vertices.get(indexOfVertexList).processed = 0;
+
+        }
+
+        for (int indexOfVertexList = 0; indexOfVertexList < vertices.size(); indexOfVertexList++) {
+
+
+            VertexWithEdge currentGraphVertex = vertices.get(indexOfVertexList);
+
+            if(currentGraphVertex.processed == 0){
+                depthVisit(currentGraphVertex);
+            }
+
+        }
+
+
+    }
+
+    private void depthVisit(VertexWithEdge vertexWithEdge){
+
+        vertexWithEdge.processed =1;
+
+        for(int index=0; index < vertexWithEdge.getEdges().size() ; index++){
+
+            if(vertexWithEdge.getEdges().get(index).getVertex().processed == 0){
+                depthVisit(vertexWithEdge.getEdges().get(index).getVertex());
+            }
+
+        }
+
+        vertexWithEdge.processed = 2;
+        System.out.println("" + vertexWithEdge.getData().id);
 
     }
 
