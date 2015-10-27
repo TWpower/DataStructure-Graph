@@ -29,10 +29,9 @@ public class Main {
         // print all vertices
         System.out.println("Vertices : ");
         directedGraph.printAllVertices();
+        System.out.println();
 
         // insert edges
-
-
 
         // 1->4
         directedGraph.insertEdge(directedGraph.retrieveVertex(1), directedGraph.retrieveVertex(4));
@@ -54,6 +53,7 @@ public class Main {
         // print graph after insert edges
         System.out.println("Graph(After insert edges) : ");
         directedGraph.printGraph();
+        System.out.println();
 
         // delete edge
 
@@ -63,11 +63,15 @@ public class Main {
         // print graph after delete edge
         System.out.println("Graph(After delete edges) : ");
         directedGraph.printGraph();
+        System.out.println();
 
         // delete vertex
         directedGraph.deleteVertex(14);
+        System.out.println();
+
         System.out.println("Graph(After delete vertex) : ");
         directedGraph.printGraph();
+        System.out.println();
 
         System.out.println("DFS and BFS");
 
@@ -80,8 +84,18 @@ public class Main {
         System.out.println();
 
         // DFS_RECURSION
-        directedGraph.depthFirstSearchByRecursion();
+        System.out.print("DFS(Recursion) : "); directedGraph.depthFirstSearchByRecursion();
+        System.out.println();
 
+        // DFS_STACK
+        System.out.print("DFS(Stack) : "); directedGraph.depthFirstSerachByStack();;
+        System.out.println();
+
+        System.out.println();
+
+        System.out.println("Adjacency Matrix");
+        directedGraph.printAdjacencyMatrix();
+        System.out.println();
 
         /***
          * Undirected Graph
@@ -99,6 +113,7 @@ public class Main {
         // print all vertices
         System.out.println("Vertices : ");
         unDirectedGraph.printAllVertices();
+        System.out.println();
 
         // insert edges
 
@@ -106,12 +121,12 @@ public class Main {
         unDirectedGraph.insertEdge(unDirectedGraph.retrieveVertex(1), unDirectedGraph.retrieveVertex(4));
         // 4-10
         unDirectedGraph.insertEdge(unDirectedGraph.retrieveVertex(4), unDirectedGraph.retrieveVertex(10));
-        // 10-25
-        unDirectedGraph.insertEdge(unDirectedGraph.retrieveVertex(10), unDirectedGraph.retrieveVertex(25));
-        // 25-9
-        unDirectedGraph.insertEdge(unDirectedGraph.retrieveVertex(25), unDirectedGraph.retrieveVertex(9));
-        // 9-7
-        unDirectedGraph.insertEdge(unDirectedGraph.retrieveVertex(9), unDirectedGraph.retrieveVertex(7));
+        // 25-10
+        unDirectedGraph.insertEdge(unDirectedGraph.retrieveVertex(25), unDirectedGraph.retrieveVertex(10));
+        // 9-25
+        unDirectedGraph.insertEdge(unDirectedGraph.retrieveVertex(9), unDirectedGraph.retrieveVertex(25));
+        // 7-9
+        unDirectedGraph.insertEdge(unDirectedGraph.retrieveVertex(7), unDirectedGraph.retrieveVertex(9));
         // 9-4
         unDirectedGraph.insertEdge(unDirectedGraph.retrieveVertex(9), unDirectedGraph.retrieveVertex(4));
         // 4-7
@@ -122,15 +137,25 @@ public class Main {
         // print graph after insert edges
         System.out.println("Graph(After insert edges) : ");
         unDirectedGraph.printGraph();
+        System.out.println();
 
         // delete edge
 
         // cut 9-4
-        unDirectedGraph.deleteEdge(unDirectedGraph.retrieveVertex(9),unDirectedGraph.retrieveVertex(4));
+        unDirectedGraph.deleteEdge(unDirectedGraph.retrieveVertex(9), unDirectedGraph.retrieveVertex(4));
 
         // print graph after delete edge
         System.out.println("Graph(After delete edges) : ");
         unDirectedGraph.printGraph();
+        System.out.println();
+
+        // delete vertex
+        unDirectedGraph.deleteVertex(14);
+        System.out.println();
+
+        System.out.println("Graph(After delete vertex) : ");
+        unDirectedGraph.printGraph();
+        System.out.println();
 
         System.out.println("DFS and BFS");
 
@@ -142,6 +167,19 @@ public class Main {
         unDirectedGraph.breadthFirstSearch();
         System.out.println();
 
+        // DFS_RECURSION
+        System.out.print("DFS(Recursion) : "); unDirectedGraph.depthFirstSearchByRecursion();
+        System.out.println();
+
+        // DFS_STACK
+        System.out.print("DFS(Stack) : "); unDirectedGraph.depthFirstSerachByStack();;
+        System.out.println();
+
+        System.out.println();
+
+        System.out.println("Adjacency Matrix");
+        unDirectedGraph.printAdjacencyMatrix();
+        System.out.println();
 
         /***
          * WeightDirected Graph
@@ -149,7 +187,7 @@ public class Main {
 
         // Graph created
         WeightDirectedGraph weightDirectedGraph = new WeightDirectedGraph();
-        System.out.println("===UnDirected Graph===");
+        System.out.println("===WeightDirected Graph===");
         System.out.println();
 
         // insert vertices to graph
@@ -182,15 +220,25 @@ public class Main {
         // print graph after insert edges
         System.out.println("Graph(After insert edges) : ");
         weightDirectedGraph.printGraph();
+        System.out.println();
 
         // delete edge
 
-        // cut 9-4
-        weightDirectedGraph.deleteEdge(weightDirectedGraph.retrieveVertex(9),weightDirectedGraph.retrieveVertex(4));
+        // cut 9->4
+        weightDirectedGraph.deleteEdge(weightDirectedGraph.retrieveVertex(9), weightDirectedGraph.retrieveVertex(4));
 
         // print graph after delete edge
         System.out.println("Graph(After delete edges) : ");
         weightDirectedGraph.printGraph();
+        System.out.println();
+
+        // delete vertex
+        weightDirectedGraph.deleteVertex(14);
+        System.out.println();
+
+        System.out.println("Graph(After delete vertex) : ");
+        weightDirectedGraph.printGraph();
+        System.out.println();
 
         System.out.println("DFS and BFS");
 
@@ -202,12 +250,19 @@ public class Main {
         weightDirectedGraph.breadthFirstSearch();
         System.out.println();
 
+        // DFS_RECURSION
+        System.out.print("DFS(Recursion) : "); weightDirectedGraph.depthFirstSearchByRecursion();
+        System.out.println();
+
+        // DFS_STACK
+        System.out.print("DFS(Stack) : "); weightDirectedGraph.depthFirstSerachByStack();;
+        System.out.println();
 
         System.out.println();
-        System.out.println();
-        System.out.println();
 
-        directedGraph.printAdjacencyMatrix();
+        System.out.println("Adjacency Matrix");
+        weightDirectedGraph.printAdjacencyMatrix();
+        System.out.println();
 
 
     }

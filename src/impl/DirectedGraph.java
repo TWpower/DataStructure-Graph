@@ -3,8 +3,6 @@ package impl;
 import base.Data;
 import base.Edge;
 import base.Vertex;
-import base.VertexWithEdge;
-
 import java.util.*;
 
 /**
@@ -12,7 +10,7 @@ import java.util.*;
  */
 public class DirectedGraph {
 
-    private LinkedList<VertexWithEdge> vertices; // 그래프 안에 vertex들
+    private LinkedList<Vertex> vertices; // 그래프 안에 Vertex들
     private int size; //number of vertieces
 
     // 그래프 생성자
@@ -27,7 +25,7 @@ public class DirectedGraph {
     //Data 로 추가
     public boolean insertVertex(Data data) {
 
-        VertexWithEdge tmpVertex = new VertexWithEdge(data);
+        Vertex tmpVertex = new Vertex(data);
 
         // 만약 그래프가 vertex가 0 개이면 첫 번째에 추가
         if (vertices.size() == 0) {
@@ -37,7 +35,7 @@ public class DirectedGraph {
             return true;
         }
 
-        // 만약 입력하는 데이터의 끝보다 크면 바로 뒤에 추가
+        // 만약 입력하는 데이터가 그래프의 마지막 데이터보다 id가 크다면 LinkedList 제일 뒤에 추가
         else if (data.compareTo(vertices.getLast().getData()) == 1) {
             vertices.addLast(tmpVertex);
             size++;
@@ -76,24 +74,23 @@ public class DirectedGraph {
     }
 
     //key 값으로 찾는다.
-    public VertexWithEdge deleteVertex(int key) {
-        //key == id in Data
+    public Vertex deleteVertex(int key) {
 
+        //key == id in Data
         int indexOfVertexList = 0;
 
-        VertexWithEdge tmpVertex;
 
-        // Degree들이 0이 아닌 경우우
+        // Degree들이 0이 아닌 경우에만 삭제가 가능!
        if(retrieveVertex(key).outDegree !=0 || retrieveVertex(key).inDegree !=0){
             System.out.println("Degree is not Zero");
             return null;
         }
 
-        while (indexOfVertexList < vertices.size()) {
+        //하나하나 확인하면서 찾는다
+        while(indexOfVertexList < vertices.size()) {
 
+            if (vertices.get(indexOfVertexList).getData().id == key) {
 
-
-            if ( (tmpVertex=vertices.get(indexOfVertexList)).getData().id == key) {
                 // vertex 삭제 및 반환
                 size--;
                 return vertices.remove(indexOfVertexList);
@@ -110,16 +107,18 @@ public class DirectedGraph {
     }
 
     // 목적지 vertex와 도착지 vertex
-    public boolean insertEdge(VertexWithEdge vertexFrom, VertexWithEdge vertexTo) {
+    public boolean insertEdge(Vertex vertexFrom, Vertex vertexTo) {
 
         //해당하는 vertexFrom또는 vertexTo가 그래프에 없다면
         if (vertices.indexOf(vertexFrom) == -1 || vertices.indexOf(vertexTo) == -1)
             return false;
 
+
+
             //vertexFrom이 그래프에 있다면
         else {
 
-            // 추가할 edge
+            // 추가할 edge, Weight는 0
             Edge edge = new Edge(vertexTo, 0);
 
             int indexOfVertexList = 0;
@@ -133,7 +132,10 @@ public class DirectedGraph {
             }
 
             else {
+
                 //인덱스를 올리면서 edge들을 비교
+                //index가 vertices들의 수를 넘어가지 않고
+                //vertexTo의 Data에 있는 id가 현재 Vertex보다 크다면 +1
                 while (indexOfVertexList < vertexFrom.getEdges().size()
                        && vertexTo.getData().compareTo(vertexFrom.getEdges().get(indexOfVertexList).getVertex().getData()) == 1
                 ) {
@@ -152,9 +154,11 @@ public class DirectedGraph {
                 // 중복이 아니면 추가
                 else {
 
+                    //해당 index에다가 Edge를 추가한다.
                     if(indexOfVertexList < vertexFrom.getEdges().size())
                     vertexFrom.getEdges().add(indexOfVertexList, edge);
 
+                    //id의 값이 커서 제일 뒤에 추가하는 경우
                     else
                     vertexFrom.getEdges().addLast(edge);
 
@@ -167,11 +171,10 @@ public class DirectedGraph {
 
         }
 
-
     }
 
     // 목적지 vertex와 도착지 vertex
-    public boolean deleteEdge(VertexWithEdge vertexFrom, VertexWithEdge vertexTo) {
+    public boolean deleteEdge(Vertex vertexFrom, Vertex vertexTo) {
 
         //해당하는 vertexFrom또는 vertexTo가 그래프에 없다면
         if (vertices.indexOf(vertexFrom) == -1 || vertices.indexOf(vertexTo) == -1)
@@ -186,7 +189,7 @@ public class DirectedGraph {
             for (indexOfVertexList = 0; indexOfVertexList < vertexFrom.getEdges().size(); indexOfVertexList++) {
 
                 //값이 같다면 빼버린다.
-                if (vertexFrom.getEdges().get(indexOfVertexList).equals(vertexTo)) {
+                if (vertexFrom.getEdges().get(indexOfVertexList).getVertex().equals(vertexTo)) {
                     vertexFrom.getEdges().remove(indexOfVertexList);
                     vertexFrom.outDegree--;
                     vertexTo.inDegree--;
@@ -203,7 +206,7 @@ public class DirectedGraph {
     }
 
     // key 값으로 찾기
-    public VertexWithEdge retrieveVertex(int key) {
+    public Vertex retrieveVertex(int key) {
         //key == id in Data
 
         int indexOfVertexList;
@@ -221,10 +224,10 @@ public class DirectedGraph {
         return null;
     }
 
-
+    //Bad Algorithm
     public void depthFirstSearch() {
 
-        Stack<VertexWithEdge> stack = new Stack<>();
+        Stack<Vertex> stack = new Stack<>();
 
         System.out.print("DFS : ");
 
@@ -238,7 +241,7 @@ public class DirectedGraph {
         // 하나하나의 vertex들을 확인
         for (int indexOfVertexList = 0; indexOfVertexList < vertices.size(); indexOfVertexList++) {
 
-            VertexWithEdge currentGraphVertex = vertices.get(indexOfVertexList);
+            Vertex currentGraphVertex = vertices.get(indexOfVertexList);
 
             // processed가 0이라면
             if (currentGraphVertex.processed < 2) {
@@ -253,7 +256,7 @@ public class DirectedGraph {
             // 스택이 빌 때까지 검사
             while (!stack.isEmpty()) {
 
-                VertexWithEdge vertexFromStack = stack.pop();
+                Vertex vertexFromStack = stack.pop();
                 //Stack 에서 꺼내면 2로 flag 처리 그리고 stack에 있으면 무조건 processed=1임
                 if(vertexFromStack.processed != 2) {
                     vertexFromStack.processed = 2;
@@ -280,71 +283,95 @@ public class DirectedGraph {
 
     }
 
-    public void depthFirstSearchByRecursion(){
+    public void depthFirstSerachByStack(){
 
         // vertex에서 processed를 모두 0으로 바꿈
-        for (int indexOfVertexList = 0; indexOfVertexList < vertices.size(); indexOfVertexList++) {
-
-            vertices.get(indexOfVertexList).processed = 0;
-
+        for (Vertex vertex : vertices) {
+            vertex.processed = 0;
         }
 
-        for (int indexOfVertexList = 0; indexOfVertexList < vertices.size(); indexOfVertexList++) {
+        Stack<Vertex> stack = new Stack();
 
+        stack.push(vertices.getFirst());
 
-            VertexWithEdge currentGraphVertex = vertices.get(indexOfVertexList);
+        while(!stack.empty()){
 
-            if(currentGraphVertex.processed == 0){
-                depthVisit(currentGraphVertex);
+            Vertex currentVertex = stack.pop();
+
+            if(currentVertex.processed == 1)
+                continue;
+
+            currentVertex.processed = 1;
+            System.out.print(currentVertex.getData().id + " ");
+
+            for(int index = 0 ; index < currentVertex.getEdges().size() ; index++){
+
+                Edge edge = currentVertex.getEdges().get(currentVertex.getEdges().size() -1 -index);
+
+                stack.push(edge.getVertex());
             }
-
         }
 
 
     }
 
-    private void depthVisit(VertexWithEdge vertexWithEdge){
+    public void depthFirstSearchByRecursion(){
 
-        vertexWithEdge.processed =1;
-
-        for(int index=0; index < vertexWithEdge.getEdges().size() ; index++){
-
-            if(vertexWithEdge.getEdges().get(index).getVertex().processed == 0){
-                depthVisit(vertexWithEdge.getEdges().get(index).getVertex());
-            }
-
+        // vertex에서 processed를 모두 0으로 바꿈
+        for (Vertex vertex : vertices) {
+            vertex.processed = 0;
         }
 
-        vertexWithEdge.processed = 2;
-        System.out.println("" + vertexWithEdge.getData().id);
+        // 모든 vertex들을 depthVisit을 통해서 재귀호출
+        for (Vertex currentGraphVertex : vertices) {
+
+            if(currentGraphVertex.processed == 0){
+                __depthVisit(currentGraphVertex);
+            }
+        }
+    }
+
+    //For depthFirstSearchByRecursion
+    private void __depthVisit(Vertex vertex){
+
+        vertex.processed =1;
+        System.out.print(vertex.getData().id + " ");
+
+        // 현재 vertex의 edge들의 vertex에 대해서 processed=0이면 재귀호출한다.
+        for(Edge edge : vertex.getEdges()){
+
+            if(edge.getVertex().processed == 0){
+                __depthVisit(edge.getVertex());
+            }
+        }
+
 
     }
 
     public void breadthFirstSearch() {
 
         // 실질적으로 Queue와 LinkedList를 같은 방식으로 사용 할 수 있기에 LinkedList 사용
-        LinkedList<VertexWithEdge> queue = new LinkedList<>();
+        // enqueue : addLast 사용, dequeue : removeFisrt 사용
+        LinkedList<Vertex> queue = new LinkedList<>();
 
         System.out.print("BFS : ");
 
         // vertex에서 processed를 모두 0으로 바꿈
-        for (int indexOfVertexList = 0; indexOfVertexList < vertices.size(); indexOfVertexList++) {
+        for (Vertex vertex : vertices) {
 
-            vertices.get(indexOfVertexList).processed = 0;
+            vertex.processed = 0;
 
         }
 
         // 하나하나의 vertex들을 확인
-        for (int indexOfVertexList = 0; indexOfVertexList < vertices.size(); indexOfVertexList++) {
-
-            VertexWithEdge currentGraphVertex = vertices.get(indexOfVertexList);
+        for (Vertex currentGraphVertex : vertices) {
 
             // processed가 0이라면
             if (currentGraphVertex.processed < 2) {
                 if (currentGraphVertex.processed < 1) {
 
-                    //queue에 추가
-                    queue.add(currentGraphVertex);
+                    //queue에 추가후에 processed를 1로 표시
+                    queue.addLast(currentGraphVertex);
                     currentGraphVertex.processed = 1;
                 }
             }
@@ -352,20 +379,20 @@ public class DirectedGraph {
             // queue가 빌 때까지 검사
             while (!queue.isEmpty()) {
 
-            VertexWithEdge vertexFromQueue = queue.removeFirst();
-                //Stack 에서 꺼내면 2로 flag 처리
+            Vertex vertexFromQueue = queue.removeFirst();
+                //Queue 에서 꺼내면 2로 flag 처리
                 vertexFromQueue.processed = 2;
                 System.out.print(vertexFromQueue.getData().id + " ");
 
-                // 후에 vertexFromQueue에 해당하는 인접 리스트들을 전부 queue에 넣어준다
-                for (int edgeIndex = 0; edgeIndex < vertexFromQueue.getEdges().size(); edgeIndex++) {
+                // 후에 vertexFromQueue에 해당하는 인접 리스트들의  전부 queue에 넣어준다
+                for (Edge edge : vertexFromQueue.getEdges()) {
 
                     // queue에 추가 한적이 없다면
-                    if (vertexFromQueue.getEdges().get(edgeIndex).getVertex().processed == 0) {
-                        queue.add(vertexFromQueue.getEdges().get(edgeIndex).getVertex());
+                    if (edge.getVertex().processed == 0) {
+                        queue.add(edge.getVertex());
 
                         // queue에 추가했으니
-                        vertexFromQueue.getEdges().get(edgeIndex).getVertex().processed = 1;
+                        edge.getVertex().processed = 1;
                     }
                 }
 
@@ -387,12 +414,12 @@ public class DirectedGraph {
             System.out.print("Nothing in Graph");
         }
 
-        // graph가 있다면면
+        // graph가 있다면 하나하나 출력해준다.
         else {
 
-            for (int index = 0; index < vertices.size(); index++) {
+            for (Vertex vertex : vertices) {
 
-                System.out.print(vertices.get(index).getData().id + " ");
+                System.out.print(vertex.getData().id + " ");
 
             }
         }
@@ -401,21 +428,23 @@ public class DirectedGraph {
 
     }
 
-    public void printEdges(VertexWithEdge vertex) {
+    public void printEdges(Vertex vertex) {
 
         // vertex가 있는지 확인
         if (vertices.indexOf(vertex) == -1) {
             System.out.print("No Such Vertex");
+
         } else {
 
             // vertex에 edge가 있는지 확인
             if (vertex.getEdges().size() == 0) {
                 System.out.print("No Edges");
+
             } else {
                 // 출력
-                for (int index = 0; index < vertex.getEdges().size(); index++) {
+                for (Edge edge : vertex.getEdges()) {
 
-                    System.out.print(vertex.getEdges().get(index).getVertex().getData().id + " -> ");
+                    System.out.print(edge.getVertex().getData().id + " -> ");
 
                 }
             }
@@ -436,9 +465,7 @@ public class DirectedGraph {
         else {
 
             // vertex
-            for (int vertexIndex = 0; vertexIndex < vertices.size(); vertexIndex++) {
-
-                VertexWithEdge currentVertex = vertices.get(vertexIndex);
+            for (Vertex currentVertex : vertices) {
 
                 System.out.print(currentVertex.getData().id + " : ");
 
@@ -473,13 +500,14 @@ public class DirectedGraph {
             return null;
 
 
-
-
         // 그래프가 있다면
         else{
 
+            //Vertex의 id와 배열의 index를 matching 시키기 위한 해시맵
             HashMap<Integer, Integer> hashMap = new HashMap<>();
 
+            //해시맵을 통해서 대응 시킴
+            // key : id of Vertex, value : index of Array
             for(int index=0; index < vertices.size() ; index++){
 
                 hashMap.put(vertices.get(index).getData().id, index);
@@ -489,24 +517,24 @@ public class DirectedGraph {
 
             int sizeOfMatrix = vertices.size();
 
+            // 인접행렬을 크기에 따라서 만들고
             int [][] adjencyMatrix = new int[sizeOfMatrix][sizeOfMatrix];
 
             // 행렬에다가 값을 넣는다
+            // 하나의 행(row)에 대해서
             for(int row = 0 ; row <sizeOfMatrix; row++){
 
-                int numOfEdges = 0;
+                //HashMap을 통해서 id에 해당하는 배열의 인덱스를 찾아서 1을 넣어준다
+                for(Edge edge : vertices.get(row).getEdges()){
 
-                while(numOfEdges < vertices.get(row).getEdges().size()){
+                    adjencyMatrix[row][hashMap.get(edge.getVertex().getData().id)] = 1;
+                    //edge.getVertex().getData().id : 현재 Edge가 가지고 있는 Vetex의 id
+                    //hashMap.get(id) : id를 통해서 배열의 index 값을 가져온다.
 
-                    adjencyMatrix[row][hashMap.get(vertices.get(row).getEdges().get(numOfEdges).getVertex().getData().id)] = 1;
-
-                    numOfEdges++;
                 }
 
             }
-
             return adjencyMatrix;
-
         }
 
 

@@ -5,15 +5,18 @@ package base;
  */
 public class Edge {
 
-    private VertexWithEdge vertex;
+
+    //Edge는 목적지 Vertex를 포함한다.
+    //Weight는 그 가중치를 의미한다.
+    private Vertex vertex;
     private int weight;
 
-    public Edge(VertexWithEdge vertex,int weight){
+    public Edge(Vertex vertex,int weight){
         this.vertex = vertex;
         this.weight = weight;
     }
 
-    public VertexWithEdge getVertex(){
+    public Vertex getVertex(){
 
         return vertex;
 
