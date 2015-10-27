@@ -196,14 +196,12 @@ public class UnDirectedGraph {
             //vertexFrom이 그래프에 있다면
         else {
 
-            int indexOfVertexList = 0;
-
             // 하나하나 확인하면서
-            for (indexOfVertexList = 0; indexOfVertexList < vertexFrom.getEdges().size(); indexOfVertexList++) {
+            for (Edge edge : vertexFrom.getEdges()) {
 
                 //값이 같다면 빼버린다.
-                if (vertexFrom.getEdges().get(indexOfVertexList).getVertex().equals(vertexTo)) {
-                    vertexFrom.getEdges().remove(indexOfVertexList);
+                if (edge.getVertex().equals(vertexTo)) {
+                    vertexFrom.getEdges().remove(edge);
                     vertexFrom.outDegree--;
                     vertexTo.inDegree--;
 
