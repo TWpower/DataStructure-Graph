@@ -8,7 +8,7 @@ package base;
  * Data for Simulation
  */
 
-public class Data<T> implements ICompare<Data> {
+public class Data implements ICompare<Data> {
 
     // Primary Key 역할을 하는 id
     public int id;

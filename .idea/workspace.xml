@@ -23,11 +23,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="UnDirectedGraph.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DirectedGraph.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/impl/DirectedGraph.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.42062572">
+              <caret line="526" column="44" selection-start-line="526" selection-start-column="44" selection-end-line="526" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#DirectedGraph#0;class#DirectedGraph#0" expanded="false" />
+                <element signature="method#insertVertex#0;class#DirectedGraph#0" expanded="false" />
+                <element signature="method#deleteVertex#0;class#DirectedGraph#0" expanded="false" />
+                <element signature="method#insertEdge#0;class#DirectedGraph#0" expanded="false" />
+                <element signature="method#deleteEdge#0;class#DirectedGraph#0" expanded="false" />
+                <element signature="method#retrieveVertex#0;class#DirectedGraph#0" expanded="false" />
+                <element signature="method#depthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
+                <element signature="method#depthFirstSerachByStack#0;class#DirectedGraph#0" expanded="false" />
+                <element signature="method#depthFirstSearchByRecursion#0;class#DirectedGraph#0" expanded="false" />
+                <element signature="method#__depthVisit#0;class#DirectedGraph#0" expanded="false" />
+                <element signature="method#breadthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
+                <element signature="method#numberOfVertices#0;class#DirectedGraph#0" expanded="false" />
+                <element signature="method#printAllVertices#0;class#DirectedGraph#0" expanded="false" />
+                <element signature="method#printEdges#0;class#DirectedGraph#0" expanded="false" />
+                <element signature="method#printGraph#0;class#DirectedGraph#0" expanded="false" />
+                <element signature="method#printAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UnDirectedGraph.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/impl/UnDirectedGraph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="7.99">
-              <caret line="189" column="69" selection-start-line="189" selection-start-column="69" selection-end-line="189" selection-end-column="69" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="181" column="0" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#UnDirectedGraph#0;class#UnDirectedGraph#0" expanded="false" />
@@ -54,43 +82,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DirectedGraph.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/impl/DirectedGraph.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="314" column="0" selection-start-line="314" selection-start-column="0" selection-end-line="314" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#insertVertex#0;class#DirectedGraph#0" expanded="false" />
-                <element signature="method#deleteVertex#0;class#DirectedGraph#0" expanded="false" />
-                <element signature="method#insertEdge#0;class#DirectedGraph#0" expanded="false" />
-                <element signature="method#deleteEdge#0;class#DirectedGraph#0" expanded="false" />
-                <element signature="method#retrieveVertex#0;class#DirectedGraph#0" expanded="false" />
-                <element signature="method#depthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
-                <element signature="method#depthFirstSerachByStack#0;class#DirectedGraph#0" expanded="false" />
-                <element signature="method#depthFirstSearchByRecursion#0;class#DirectedGraph#0" expanded="false" />
-                <element signature="method#__depthVisit#0;class#DirectedGraph#0" expanded="false" />
-                <element signature="method#breadthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
-                <element signature="method#printAllVertices#0;class#DirectedGraph#0" expanded="false" />
-                <element signature="method#printEdges#0;class#DirectedGraph#0" expanded="false" />
-                <element signature="method#printGraph#0;class#DirectedGraph#0" expanded="false" />
-                <element signature="method#printAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
-                <element signature="method#makeAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="WeightDirectedGraph.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/impl/WeightDirectedGraph.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="179" column="66" selection-start-line="179" selection-start-column="66" selection-end-line="179" selection-end-column="66" />
+              <caret line="128" column="24" selection-start-line="128" selection-start-column="24" selection-end-line="128" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#insertVertex#0;class#WeightDirectedGraph#0" expanded="false" />
                 <element signature="method#deleteVertex#0;class#WeightDirectedGraph#0" expanded="false" />
-                <element signature="method#insertEdge#0;class#WeightDirectedGraph#0" expanded="false" />
                 <element signature="method#deleteEdge#0;class#WeightDirectedGraph#0" expanded="false" />
                 <element signature="method#retrieveVertex#0;class#WeightDirectedGraph#0" expanded="false" />
                 <element signature="method#depthFirstSearch#0;class#WeightDirectedGraph#0" expanded="false" />
@@ -120,6 +120,46 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Data.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/base/Data.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Vertex.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/base/Vertex.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ICompare.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/base/ICompare.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Edge.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/base/Edge.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -141,13 +181,13 @@
         <option value="$PROJECT_DIR$/src/base/ICompare.java" />
         <option value="$PROJECT_DIR$/src/base/VertexWithEdge.java" />
         <option value="$PROJECT_DIR$/src/base/Header.java" />
-        <option value="$PROJECT_DIR$/src/base/Data.java" />
         <option value="$PROJECT_DIR$/src/base/Edge.java" />
         <option value="$PROJECT_DIR$/src/base/Vertex.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/impl/DirectedGraph.java" />
         <option value="$PROJECT_DIR$/src/impl/WeightDirectedGraph.java" />
         <option value="$PROJECT_DIR$/src/impl/UnDirectedGraph.java" />
+        <option value="$PROJECT_DIR$/src/base/Data.java" />
       </list>
     </option>
   </component>
@@ -194,9 +234,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -267,6 +304,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -276,6 +316,8 @@
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../DataStructure_TREE-master" />
     <property name="FullScreen" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true">
@@ -528,40 +570,47 @@
       <workItem from="1445922072758" duration="3653000" />
       <workItem from="1445927674305" duration="161000" />
       <workItem from="1445927989833" duration="844000" />
+      <workItem from="1446026287736" duration="7449000" />
+      <workItem from="1446115269786" duration="648000" />
+      <workItem from="1446120672678" duration="1363000" />
+      <workItem from="1446137261589" duration="683000" />
+      <workItem from="1446176879523" duration="1014000" />
+      <workItem from="1446199297014" duration="378000" />
+      <workItem from="1446203997702" duration="22000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96534000" />
+    <option name="totallyTimeSpent" value="108091000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
-    <editor active="false" />
+    <frame x="-11" y="-11" width="1942" height="1042" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.8477778" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.228125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18854167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41777778" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.8477778" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6766667" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41777778" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -577,7 +626,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="32" />
+      <option name="time" value="34" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -592,6 +641,7 @@
           <caret line="543" column="1" selection-start-line="543" selection-start-column="1" selection-end-line="543" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#DirectedGraph#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#insertVertex#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#deleteVertex#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#insertEdge#0;class#DirectedGraph#0" expanded="false" />
@@ -602,11 +652,11 @@
             <element signature="method#depthFirstSearchByRecursion#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#__depthVisit#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#breadthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
+            <element signature="method#numberOfVertices#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printAllVertices#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printEdges#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printGraph#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#makeAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -648,7 +698,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#insertVertex#0;class#WeightDirectedGraph#0" expanded="false" />
             <element signature="method#deleteVertex#0;class#WeightDirectedGraph#0" expanded="false" />
-            <element signature="method#insertEdge#0;class#WeightDirectedGraph#0" expanded="false" />
             <element signature="method#deleteEdge#0;class#WeightDirectedGraph#0" expanded="false" />
             <element signature="method#retrieveVertex#0;class#WeightDirectedGraph#0" expanded="false" />
             <element signature="method#depthFirstSearch#0;class#WeightDirectedGraph#0" expanded="false" />
@@ -689,6 +738,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#DirectedGraph#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#insertVertex#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#deleteVertex#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#insertEdge#0;class#DirectedGraph#0" expanded="false" />
@@ -699,11 +749,11 @@
             <element signature="method#depthFirstSearchByRecursion#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#__depthVisit#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#breadthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
+            <element signature="method#numberOfVertices#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printAllVertices#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printEdges#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printGraph#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#makeAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -777,7 +827,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#insertVertex#0;class#WeightDirectedGraph#0" expanded="false" />
             <element signature="method#deleteVertex#0;class#WeightDirectedGraph#0" expanded="false" />
-            <element signature="method#insertEdge#0;class#WeightDirectedGraph#0" expanded="false" />
             <element signature="method#deleteEdge#0;class#WeightDirectedGraph#0" expanded="false" />
             <element signature="method#retrieveVertex#0;class#WeightDirectedGraph#0" expanded="false" />
             <element signature="method#depthFirstSearch#0;class#WeightDirectedGraph#0" expanded="false" />
@@ -816,6 +865,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#DirectedGraph#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#insertVertex#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#deleteVertex#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#insertEdge#0;class#DirectedGraph#0" expanded="false" />
@@ -826,11 +876,11 @@
             <element signature="method#depthFirstSearchByRecursion#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#__depthVisit#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#breadthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
+            <element signature="method#numberOfVertices#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printAllVertices#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printEdges#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printGraph#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#makeAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -881,6 +931,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#DirectedGraph#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#insertVertex#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#deleteVertex#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#insertEdge#0;class#DirectedGraph#0" expanded="false" />
@@ -891,11 +942,11 @@
             <element signature="method#depthFirstSearchByRecursion#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#__depthVisit#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#breadthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
+            <element signature="method#numberOfVertices#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printAllVertices#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printEdges#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printGraph#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#makeAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -939,6 +990,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#DirectedGraph#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#insertVertex#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#deleteVertex#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#insertEdge#0;class#DirectedGraph#0" expanded="false" />
@@ -949,11 +1001,11 @@
             <element signature="method#depthFirstSearchByRecursion#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#__depthVisit#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#breadthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
+            <element signature="method#numberOfVertices#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printAllVertices#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printEdges#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printGraph#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#makeAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -997,6 +1049,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#DirectedGraph#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#insertVertex#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#deleteVertex#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#insertEdge#0;class#DirectedGraph#0" expanded="false" />
@@ -1007,11 +1060,11 @@
             <element signature="method#depthFirstSearchByRecursion#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#__depthVisit#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#breadthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
+            <element signature="method#numberOfVertices#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printAllVertices#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printEdges#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printGraph#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#makeAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1055,6 +1108,7 @@
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#DirectedGraph#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#insertVertex#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#deleteVertex#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#insertEdge#0;class#DirectedGraph#0" expanded="false" />
@@ -1065,11 +1119,11 @@
             <element signature="method#depthFirstSearchByRecursion#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#__depthVisit#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#breadthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
+            <element signature="method#numberOfVertices#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printAllVertices#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printEdges#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printGraph#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#makeAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1113,6 +1167,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#DirectedGraph#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#insertVertex#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#deleteVertex#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#insertEdge#0;class#DirectedGraph#0" expanded="false" />
@@ -1123,11 +1178,11 @@
             <element signature="method#depthFirstSearchByRecursion#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#__depthVisit#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#breadthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
+            <element signature="method#numberOfVertices#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printAllVertices#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printEdges#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printGraph#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#makeAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1157,28 +1212,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/base/Edge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="26" selection-start-line="8" selection-start-column="6" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/base/Vertex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/base/Data.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29245284">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1189,60 +1222,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/impl/WeightDirectedGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="179" column="66" selection-start-line="179" selection-start-column="66" selection-end-line="179" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#insertVertex#0;class#WeightDirectedGraph#0" expanded="false" />
-            <element signature="method#deleteVertex#0;class#WeightDirectedGraph#0" expanded="false" />
-            <element signature="method#insertEdge#0;class#WeightDirectedGraph#0" expanded="false" />
-            <element signature="method#deleteEdge#0;class#WeightDirectedGraph#0" expanded="false" />
-            <element signature="method#retrieveVertex#0;class#WeightDirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSearch#0;class#WeightDirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSerachByStack#0;class#WeightDirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSearchByRecursion#0;class#WeightDirectedGraph#0" expanded="false" />
-            <element signature="method#__depthVisit#0;class#WeightDirectedGraph#0" expanded="false" />
-            <element signature="method#breadthFirstSearch#0;class#WeightDirectedGraph#0" expanded="false" />
-            <element signature="method#printAllVertices#0;class#WeightDirectedGraph#0" expanded="false" />
-            <element signature="method#printEdges#0;class#WeightDirectedGraph#0" expanded="false" />
-            <element signature="method#printGraph#0;class#WeightDirectedGraph#0" expanded="false" />
-            <element signature="method#printAdjacencyMatrix#0;class#WeightDirectedGraph#0" expanded="false" />
-            <element signature="method#makeAdjacencyMatrix#0;class#WeightDirectedGraph#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/impl/DirectedGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="314" column="0" selection-start-line="314" selection-start-column="0" selection-end-line="314" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#insertVertex#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#deleteVertex#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#insertEdge#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#deleteEdge#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#retrieveVertex#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSerachByStack#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSearchByRecursion#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#__depthVisit#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#breadthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#printAllVertices#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#printEdges#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#printGraph#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#printAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#makeAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/impl/UnDirectedGraph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="7.99">
-          <caret line="189" column="69" selection-start-line="189" selection-start-column="69" selection-end-line="189" selection-end-column="69" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="181" column="0" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#UnDirectedGraph#0;class#UnDirectedGraph#0" expanded="false" />
@@ -1264,6 +1247,80 @@
             <element signature="method#printGraph#0;class#UnDirectedGraph#0" expanded="false" />
             <element signature="method#printAdjacencyMatrix#0;class#UnDirectedGraph#0" expanded="false" />
             <element signature="method#makeAdjacencyMatrix#0;class#UnDirectedGraph#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/impl/WeightDirectedGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="128" column="24" selection-start-line="128" selection-start-column="24" selection-end-line="128" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#insertVertex#0;class#WeightDirectedGraph#0" expanded="false" />
+            <element signature="method#deleteVertex#0;class#WeightDirectedGraph#0" expanded="false" />
+            <element signature="method#deleteEdge#0;class#WeightDirectedGraph#0" expanded="false" />
+            <element signature="method#retrieveVertex#0;class#WeightDirectedGraph#0" expanded="false" />
+            <element signature="method#depthFirstSearch#0;class#WeightDirectedGraph#0" expanded="false" />
+            <element signature="method#depthFirstSerachByStack#0;class#WeightDirectedGraph#0" expanded="false" />
+            <element signature="method#depthFirstSearchByRecursion#0;class#WeightDirectedGraph#0" expanded="false" />
+            <element signature="method#__depthVisit#0;class#WeightDirectedGraph#0" expanded="false" />
+            <element signature="method#breadthFirstSearch#0;class#WeightDirectedGraph#0" expanded="false" />
+            <element signature="method#printAllVertices#0;class#WeightDirectedGraph#0" expanded="false" />
+            <element signature="method#printEdges#0;class#WeightDirectedGraph#0" expanded="false" />
+            <element signature="method#printGraph#0;class#WeightDirectedGraph#0" expanded="false" />
+            <element signature="method#printAdjacencyMatrix#0;class#WeightDirectedGraph#0" expanded="false" />
+            <element signature="method#makeAdjacencyMatrix#0;class#WeightDirectedGraph#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/base/Data.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/base/Edge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/base/Vertex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/impl/DirectedGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42062572">
+          <caret line="526" column="44" selection-start-line="526" selection-start-column="44" selection-end-line="526" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#DirectedGraph#0;class#DirectedGraph#0" expanded="false" />
+            <element signature="method#insertVertex#0;class#DirectedGraph#0" expanded="false" />
+            <element signature="method#deleteVertex#0;class#DirectedGraph#0" expanded="false" />
+            <element signature="method#insertEdge#0;class#DirectedGraph#0" expanded="false" />
+            <element signature="method#deleteEdge#0;class#DirectedGraph#0" expanded="false" />
+            <element signature="method#retrieveVertex#0;class#DirectedGraph#0" expanded="false" />
+            <element signature="method#depthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
+            <element signature="method#depthFirstSerachByStack#0;class#DirectedGraph#0" expanded="false" />
+            <element signature="method#depthFirstSearchByRecursion#0;class#DirectedGraph#0" expanded="false" />
+            <element signature="method#__depthVisit#0;class#DirectedGraph#0" expanded="false" />
+            <element signature="method#breadthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
+            <element signature="method#numberOfVertices#0;class#DirectedGraph#0" expanded="false" />
+            <element signature="method#printAllVertices#0;class#DirectedGraph#0" expanded="false" />
+            <element signature="method#printEdges#0;class#DirectedGraph#0" expanded="false" />
+            <element signature="method#printGraph#0;class#DirectedGraph#0" expanded="false" />
+            <element signature="method#printAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
           </folding>
         </state>
       </provider>
