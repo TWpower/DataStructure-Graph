@@ -3,6 +3,7 @@ package impl;
 import base.Data;
 import base.Edge;
 import base.Vertex;
+
 import java.util.*;
 
 /**
@@ -12,7 +13,6 @@ public class DirectedGraph {
 
     private LinkedList<Vertex> vertices; // 그래프 안에 Vertex들
     private int size; //number of vertieces
-
     // 그래프 생성자
     public DirectedGraph() {
 
