@@ -1,17 +1,19 @@
 package impl;
 
 import base.Data;
+import base.Distance;
 import base.Edge;
 import base.Vertex;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * Created by TaeWoo on 2015-10-19.
  */
 public class WeightDirectedGraph {
+    
+    
+    private static int INF = 100000;
 
     private LinkedList<Vertex> vertices;
     private int size; //number of vertieces
@@ -541,6 +543,415 @@ public class WeightDirectedGraph {
         }
 
 
+    }
+
+    // Point : Edge
+    public WeightDirectedGraph MSTByKruskal(){
+
+        WeightDirectedGraph tmpGraph = new WeightDirectedGraph();
+
+        
+
+
+        return tmpGraph;
+    }
+
+    // Point : Vertex
+    public WeightDirectedGraph MSTByPrim(){
+
+        WeightDirectedGraph tmpGraph = new WeightDirectedGraph();
+
+
+        return tmpGraph;
+    }
+
+    // Point : Forest
+    public WeightDirectedGraph MSTBySollin(){
+
+        WeightDirectedGraph tmpGraph = new WeightDirectedGraph();
+
+
+        return tmpGraph;
+    }
+
+    // Edge Weight가 음수이지 않은 경우!
+    // Need to be amended...
+    public Distance ShortestPathByDijkstra(Vertex startVertex, Vertex destinationVertex){
+
+        // 값이 있는지 확인
+
+        if (vertices.indexOf(startVertex) == -1 || vertices.indexOf(destinationVertex) == -1)
+            return null;
+
+
+        //Vertex의 id와 배열의 index를 matching 시키기 위한 해시맵
+        HashMap<Integer, Integer> idToArrayIndex = new HashMap<>();
+
+        //해시맵을 통해서 대응 시킴
+        // key : id of Vertex, value : index of Array
+        for(int index=0; index < vertices.size() ; index++){
+
+            idToArrayIndex.put(vertices.get(index).getData().id, index);
+
+        }
+
+        HashMap<Integer, Integer> arrayIndexToId = new HashMap<>();
+
+        //해시맵을 통해서 대응 시킴
+        // value : id of Vertex, key : index of Array
+        for(int index=0; index < vertices.size() ; index++){
+
+            arrayIndexToId.put(index, vertices.get(index).getData().id);
+
+        }
+
+        // 계산을 빠르게 하기 위한 인접행렬
+
+        int[][] weightAdjacencyMatrix = makeAdjacencyMatrixForSP();
+
+        // 거리를 저장하기 위한 배열 d와 이전 위치를 저장하기위한 배열p
+
+        int []d = new int[vertices.size()]; // distance
+        Arrays.fill(d,INF);
+        int []p = new int[vertices.size()]; // previous stop
+        Arrays.fill(p,-1); // id가 0 이상이므로 아직 정해지지 않은 부분에 대해서는 -1로 설정
+
+        // 처리 전과 후를 위한 List
+        LinkedList<Vertex> before = new LinkedList<>();
+        before.addAll(vertices);
+        /*
+        for(int i = 0 ; i < vertices.size() ; i++){
+            before.add(i);
+        }
+        */
+        LinkedList<Vertex> after = new LinkedList<>();
+
+        // startVertex의 id와 destinaionVertex의 id를 저장하는 변수
+        int startVertexId = startVertex.getData().id;
+        int destinationVertexId = destinationVertex.getData().id;
+
+        // id에 따른 배열 값에 대한 변수
+        int startVertexArrayIndex = idToArrayIndex.get(startVertexId);
+        int destinationVertexArrayIndex = idToArrayIndex.get(destinationVertexId);
+
+        //자기 자신까지의 거리는 0
+        d[startVertexArrayIndex] = 0;
+
+        //처음 시작에 해당하는 부분부터 우선 process
+
+        after.add(before.remove(before.indexOf(startVertex)));
+
+        for(Edge edge : startVertex.getEdges()){
+
+            int v = idToArrayIndex.get(edge.getVertex().getData().id);
+
+            if(d[v] > d[startVertexArrayIndex] + edge.getWeight()) {
+                d[v] = d[startVertexArrayIndex] + edge.getWeight();
+                p[v] = startVertexArrayIndex;
+            }
+        }
+
+        //나머지 부분들 처리
+
+        while(before.size() != 0){
+
+            int shortestPathArrayIndex=idToArrayIndex.get(before.getFirst().getData().id);
+
+            // before에 남겨져 있는 vertex들 중에서 출발점으로부터 거리가 가장 짧은 vertex의 배열 index 값을 찾는다
+            for(Vertex vertex : before){
+
+                if(d[shortestPathArrayIndex] > d[idToArrayIndex.get(vertex.getData().id)])
+                    shortestPathArrayIndex = idToArrayIndex.get(vertex.getData().id);
+
+            }
+
+            // 뽑은 놈에 대한 vertex를 after에 넣고 최단거리를 구한다
+
+            Vertex pickedVertex = retrieveVertex(arrayIndexToId.get(shortestPathArrayIndex));
+
+            after.add(before.remove(before.indexOf(pickedVertex)));
+
+            for(Edge edge : pickedVertex.getEdges()){
+
+                int v = idToArrayIndex.get(edge.getVertex().getData().id);
+
+                if(d[v] > d[shortestPathArrayIndex] + edge.getWeight()) {
+                    d[v] = d[shortestPathArrayIndex] + edge.getWeight();
+                    p[v] = shortestPathArrayIndex;
+                }
+            }
+
+        }
+
+
+        Distance distance = new Distance();
+
+        distance.setDistance(d[destinationVertexArrayIndex]);
+
+        int pivot = destinationVertexArrayIndex;
+
+        while(pivot != -1){
+
+            distance.getRoutes().addFirst(retrieveVertex(arrayIndexToId.get(pivot)));
+
+            pivot = p[pivot];
+
+        }
+
+        return distance;
+    }
+
+    // Need to be amended...
+    public Distance ShortestPathByBellman_Ford(Vertex startVertex, Vertex destinationVertex){
+
+        // 값이 있는지 확인
+
+        if (vertices.indexOf(startVertex) == -1 || vertices.indexOf(destinationVertex) == -1)
+            return null;
+
+
+        //Vertex의 id와 배열의 index를 matching 시키기 위한 해시맵
+        HashMap<Integer, Integer> idToArrayIndex = new HashMap<>();
+
+        //해시맵을 통해서 대응 시킴
+        // key : id of Vertex, value : index of Array
+        for(int index=0; index < vertices.size() ; index++){
+
+            idToArrayIndex.put(vertices.get(index).getData().id, index);
+
+        }
+
+        HashMap<Integer, Integer> arrayIndexToId = new HashMap<>();
+
+        //해시맵을 통해서 대응 시킴
+        // value : id of Vertex, key : index of Array
+        for(int index=0; index < vertices.size() ; index++){
+
+            arrayIndexToId.put(index, vertices.get(index).getData().id);
+
+        }
+
+        // 계산을 빠르게 하기 위한 인접행렬
+
+        int[][] weightAdjacencyMatrix = makeAdjacencyMatrixForSP();
+
+        int []d = new int[vertices.size()]; // distance
+        Arrays.fill(d,INF);
+        int []p = new int[vertices.size()]; // previous stop
+        Arrays.fill(p,-1); // id가 0 이상이므로 아직 정해지지 않은 부분에 대해서는 -1로 설정
+
+        // startVertex의 id와 destinaionVertex의 id를 저장하는 변수
+        int startVertexId = startVertex.getData().id;
+        int destinationVertexId = destinationVertex.getData().id;
+
+        // id에 따른 배열 값에 대한 변수
+        int startVertexArrayIndex = idToArrayIndex.get(startVertexId);
+        int destinationVertexArrayIndex = idToArrayIndex.get(destinationVertexId);
+
+        // 처음부분을 거리를 0으로 설정
+
+        d[startVertexArrayIndex] = 0;
+
+
+        for(int count=0 ; count < vertices.size() -1 ; count++){
+
+            for(Vertex vertex : vertices){
+
+                for(Edge edge : vertex.getEdges()){
+
+                    if(d[idToArrayIndex.get(vertex.getData().id)] + edge.getWeight() < d[idToArrayIndex.get(edge.getVertex().getData().id)]){
+                        d[idToArrayIndex.get(edge.getVertex().getData().id)] = d[idToArrayIndex.get(vertex.getData().id)] + edge.getWeight();
+                        p[idToArrayIndex.get(edge.getVertex().getData().id)] = idToArrayIndex.get(vertex.getData().id);
+                    }
+
+                }
+
+            }
+
+        }
+
+        Distance distance = new Distance();
+
+        distance.setDistance(d[destinationVertexArrayIndex]);
+
+        int pivot = destinationVertexArrayIndex;
+
+        while(pivot != -1){
+
+            distance.getRoutes().addFirst(retrieveVertex(arrayIndexToId.get(pivot)));
+
+            pivot = p[pivot];
+
+        }
+
+        return distance;
+    }
+
+    // Need to be amended...
+    public Distance ShortestPathByFloyd_Warshall(Vertex startVertex, Vertex destinationVertex){
+
+
+        // 값이 있는지 확인
+
+        if (vertices.indexOf(startVertex) == -1 || vertices.indexOf(destinationVertex) == -1)
+            return null;
+
+        //Vertex의 id와 배열의 index를 matching 시키기 위한 해시맵
+        HashMap<Integer, Integer> idToArrayIndex = new HashMap<>();
+
+        //해시맵을 통해서 대응 시킴
+        // key : id of Vertex, value : index of Array
+        for(int index=0; index < vertices.size() ; index++){
+
+            idToArrayIndex.put(vertices.get(index).getData().id, index);
+
+        }
+
+        HashMap<Integer, Integer> arrayIndexToId = new HashMap<>();
+
+        //해시맵을 통해서 대응 시킴
+        // value : id of Vertex, key : index of Array
+        for(int index=0; index < vertices.size() ; index++){
+
+            arrayIndexToId.put(index, vertices.get(index).getData().id);
+
+        }
+
+
+        int [][] weightMatrix = makeAdjacencyMatrixForSP();
+
+        int i, j, stop;
+
+        for (stop = 0; stop < vertices.size(); stop++) {
+            for (i = 0; i < vertices.size(); i++) {
+                for (j = 0; j < vertices.size(); j++) {
+
+
+                    if (weightMatrix[i][stop] + weightMatrix[stop][j] < weightMatrix[i][j])
+                        weightMatrix[i][j] = weightMatrix[i][stop] + weightMatrix[stop][j];
+
+                }
+            }
+        }
+
+        // 경로 계산 끝
+
+        if(weightMatrix[idToArrayIndex.get(startVertex.getData().id)][idToArrayIndex.get(destinationVertex.getData().id)] == INF){
+            // 경로가 존재하지 않는 경우
+
+            Distance distance = new Distance();
+
+            distance.setDistance(INF);
+
+            return distance;
+
+        }
+
+
+        Distance distance = new Distance();
+
+        distance.setDistance(weightMatrix[idToArrayIndex.get(startVertex.getData().id)][idToArrayIndex.get(destinationVertex.getData().id)]);
+
+        distance.getRoutes().addFirst(destinationVertex);
+
+        //처음에 목적지 id에 해당하는 index를 track index로 지정
+        int trackIndex = idToArrayIndex.get(destinationVertex.getData().id);
+
+
+        // 여기까지 문제 없음
+
+        while(true){
+
+            int trackRow = 0;
+
+            for(int row = 0 ; row < vertices.size(); row ++){
+
+                if(weightMatrix[trackRow][trackIndex] > weightMatrix[row][trackIndex]
+                        && (row !=trackIndex))
+                    trackRow = row;
+
+            }
+            // 다 돌면 trackIndex까지의 거리가 최소인 장소가 나옴 그게 trackRow임
+
+            Vertex tmpVertex = retrieveVertex(arrayIndexToId.get(trackRow));
+
+            distance.getRoutes().addFirst(tmpVertex);
+
+            trackIndex = trackRow;
+
+            if(tmpVertex.equals(startVertex))
+                break;
+
+        }
+
+
+        return distance;
+    }
+
+    private int[][] makeAdjacencyMatrixForSP() {
+
+        //만약 그래프가 없다면
+        if(vertices.size() == 0)
+            return null;
+
+
+            // 그래프가 있다면
+        else{
+
+            //Vertex의 id와 배열의 index를 matching 시키기 위한 해시맵
+            HashMap<Integer, Integer> idToArrayIndex = new HashMap<>();
+
+            //해시맵을 통해서 대응 시킴
+            // key : id of Vertex, value : index of Array
+            for(int index=0; index < vertices.size() ; index++){
+
+                idToArrayIndex.put(vertices.get(index).getData().id, index);
+
+            }
+
+
+            int sizeOfMatrix = vertices.size();
+
+            // 인접행렬을 크기에 따라서 만들고
+            int [][] adjencyMatrix = new int[sizeOfMatrix][sizeOfMatrix];
+
+            //거리가 연결되지 않은 부분은 거리를 INF로 설정
+            for (int[] row: adjencyMatrix)
+                Arrays.fill(row, INF);
+
+
+            for(int index=0 ; index< sizeOfMatrix ; index++){
+
+                adjencyMatrix[index][index] = 0;
+
+            }
+
+            // 행렬에다가 값을 넣는다
+            // 하나의 행(row)에 대해서
+            for(int row = 0 ; row <sizeOfMatrix; row++){
+
+                //HashMap을 통해서 id에 해당하는 배열의 인덱스를 찾아서 1을 넣어준다
+                for(Edge edge : vertices.get(row).getEdges()){
+
+                    adjencyMatrix[row][idToArrayIndex.get(edge.getVertex().getData().id)] = edge.getWeight();
+                    //edge.getVertex().getData().id : 현재 Edge가 가지고 있는 Vetex의 id
+                    //hashMap.get(id) : id를 통해서 배열의 index 값을 가져온다.
+
+                }
+
+            }
+
+
+            return adjencyMatrix;
+        }
+
+    }
+
+    //TODO : 음수의 가중치를 갖는지 판별하는 method
+    private boolean checkNegativeWeightCycle(){
+
+
+        return false;
     }
 
 }

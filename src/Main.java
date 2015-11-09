@@ -264,6 +264,27 @@ public class Main {
         weightDirectedGraph.printAdjacencyMatrix();
         System.out.println();
 
+        System.out.println("Dijkstra");
+        weightDirectedGraph.ShortestPathByDijkstra(
+                weightDirectedGraph.retrieveVertex(4),weightDirectedGraph.retrieveVertex(9)
+        ).printRoutesAndDistance();
+        System.out.println();
+
+        System.out.println("Bellman_Ford");
+        weightDirectedGraph.ShortestPathByBellman_Ford(
+                weightDirectedGraph.retrieveVertex(4),weightDirectedGraph.retrieveVertex(9)
+        ).printRoutesAndDistance();
+        System.out.println();
+
+        System.out.println("Floyd_Warshall");
+        weightDirectedGraph.ShortestPathByFloyd_Warshall(
+                weightDirectedGraph.retrieveVertex(4),weightDirectedGraph.retrieveVertex(9)
+                ).printRoutesAndDistance();
+        System.out.println();
+
+
+
+
 
     }
 }

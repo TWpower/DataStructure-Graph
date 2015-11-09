@@ -3,5 +3,6 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/src/impl/UnDirectedGraph.java" charset="x-windows-949" />
     <file url="file://$PROJECT_DIR$/src/impl/WeightDirectedGraph.java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
