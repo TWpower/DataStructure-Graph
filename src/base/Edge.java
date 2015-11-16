@@ -8,17 +8,25 @@ public class Edge {
 
     //Edge는 목적지 Vertex를 포함한다.
     //Weight는 그 가중치를 의미한다.
-    private Vertex vertex;
+    private Vertex toVertex;
+    private Vertex fromVertex;
     private int weight;
 
-    public Edge(Vertex vertex,int weight){
-        this.vertex = vertex;
+    public Edge(Vertex toVertex, Vertex fromVertex ,int weight){
+        this.toVertex = toVertex;
+        this.fromVertex = fromVertex;
         this.weight = weight;
     }
 
-    public Vertex getVertex(){
+    public Vertex getToVertex(){
 
-        return vertex;
+        return toVertex;
+
+    }
+
+    public Vertex getFromVertex(){
+
+        return fromVertex;
 
     }
 

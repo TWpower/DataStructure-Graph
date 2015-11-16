@@ -125,7 +125,7 @@ public class UnDirectedGraph {
         else {
 
             // 추가할 edge, Weight는 0
-            Edge edge = new Edge(vertexTo, 0);
+            Edge edge = new Edge(vertexTo, vertexFrom, 0);
 
             int indexOfVertexList = 0;
 
@@ -143,7 +143,7 @@ public class UnDirectedGraph {
                 //index가 vertices들의 수를 넘어가지 않고
                 //vertexTo의 Data에 있는 id가 현재 Vertex보다 크다면 +1
                 while (indexOfVertexList < vertexFrom.getEdges().size()
-                        && vertexTo.getData().compareTo(vertexFrom.getEdges().get(indexOfVertexList).getVertex().getData()) == 1
+                        && vertexTo.getData().compareTo(vertexFrom.getEdges().get(indexOfVertexList).getToVertex().getData()) == 1
                         ) {
 
                     indexOfVertexList++;
@@ -152,7 +152,7 @@ public class UnDirectedGraph {
 
                 //중복된 값이 있으면 Return
                 if (indexOfVertexList < vertexFrom.getEdges().size()
-                        && vertexTo.getData().compareTo(vertexFrom.getEdges().get(indexOfVertexList).getVertex().getData()) == 0) {
+                        && vertexTo.getData().compareTo(vertexFrom.getEdges().get(indexOfVertexList).getToVertex().getData()) == 0) {
                     System.out.println("중복된 값 오류");
                     return false;
                 }
@@ -200,7 +200,7 @@ public class UnDirectedGraph {
             for (Edge edge : vertexFrom.getEdges()) {
 
                 //값이 같다면 빼버린다.
-                if (edge.getVertex().equals(vertexTo)) {
+                if (edge.getToVertex().equals(vertexTo)) {
                     vertexFrom.getEdges().remove(edge);
                     vertexFrom.outDegree--;
                     vertexTo.inDegree--;
@@ -287,10 +287,10 @@ public class UnDirectedGraph {
                      edgeIndex >= 0 ; edgeIndex--) {
 
                     // ?????? ???? ????? ???
-                    if (vertexFromStack.getEdges().get(edgeIndex).getVertex().processed != 2) {
-                        stack.push(vertexFromStack.getEdges().get(edgeIndex).getVertex());
+                    if (vertexFromStack.getEdges().get(edgeIndex).getToVertex().processed != 2) {
+                        stack.push(vertexFromStack.getEdges().get(edgeIndex).getToVertex());
                         // ????? ?????????
-                        vertexFromStack.getEdges().get(edgeIndex).getVertex().processed = 1;
+                        vertexFromStack.getEdges().get(edgeIndex).getToVertex().processed = 1;
                     }
                 }
 
@@ -325,7 +325,7 @@ public class UnDirectedGraph {
 
                 Edge edge = currentVertex.getEdges().get(currentVertex.getEdges().size() -1 -index);
 
-                stack.push(edge.getVertex());
+                stack.push(edge.getToVertex());
             }
         }
 
@@ -357,8 +357,8 @@ public class UnDirectedGraph {
         // 현재 vertex의 edge들의 vertex에 대해서 processed=0이면 재귀호출한다.
         for(Edge edge : vertex.getEdges()){
 
-            if(edge.getVertex().processed == 0){
-                __depthVisit(edge.getVertex());
+            if(edge.getToVertex().processed == 0){
+                __depthVisit(edge.getToVertex());
             }
         }
 
@@ -406,11 +406,11 @@ public class UnDirectedGraph {
                 for (int edgeIndex = 0; edgeIndex < vertexFromQueue.getEdges().size(); edgeIndex++) {
 
                     // queue?? ??? ?????? ?????
-                    if (vertexFromQueue.getEdges().get(edgeIndex).getVertex().processed == 0)
-                        queue.add(vertexFromQueue.getEdges().get(edgeIndex).getVertex());
+                    if (vertexFromQueue.getEdges().get(edgeIndex).getToVertex().processed == 0)
+                        queue.add(vertexFromQueue.getEdges().get(edgeIndex).getToVertex());
 
                     // queue?? ?????????
-                    vertexFromQueue.getEdges().get(edgeIndex).getVertex().processed = 1;
+                    vertexFromQueue.getEdges().get(edgeIndex).getToVertex().processed = 1;
 
                 }
 
@@ -460,7 +460,7 @@ public class UnDirectedGraph {
                 // ???
                 for (int index = 0; index < vertex.getEdges().size(); index++) {
 
-                    System.out.print(vertex.getEdges().get(index).getVertex().getData().id + " -> ");
+                    System.out.print(vertex.getEdges().get(index).getToVertex().getData().id + " -> ");
 
                 }
             }
@@ -545,8 +545,8 @@ public class UnDirectedGraph {
                 //HashMap을 통해서 id에 해당하는 배열의 인덱스를 찾아서 1을 넣어준다
                 for(Edge edge : vertices.get(row).getEdges()){
 
-                    adjencyMatrix[row][hashMap.get(edge.getVertex().getData().id)] = 1;
-                    //edge.getVertex().getData().id : 현재 Edge가 가지고 있는 Vetex의 id
+                    adjencyMatrix[row][hashMap.get(edge.getToVertex().getData().id)] = 1;
+                    //edge.getToVertex().getData().id : 현재 Edge가 가지고 있는 Vetex의 id
                     //hashMap.get(id) : id를 통해서 배열의 index 값을 가져온다.
 
                 }

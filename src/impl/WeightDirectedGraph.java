@@ -124,7 +124,7 @@ public class WeightDirectedGraph {
         else {
 
             // 추가할 edge, Weight는 0
-            Edge edge = new Edge(vertexTo, weight);
+            Edge edge = new Edge(vertexTo, vertexFrom ,weight);
 
             int indexOfVertexList = 0;
 
@@ -142,7 +142,7 @@ public class WeightDirectedGraph {
                 //index가 vertices들의 수를 넘어가지 않고
                 //vertexTo의 Data에 있는 id가 현재 Vertex보다 크다면 +1
                 while (indexOfVertexList < vertexFrom.getEdges().size()
-                        && vertexTo.getData().compareTo(vertexFrom.getEdges().get(indexOfVertexList).getVertex().getData()) == 1
+                        && vertexTo.getData().compareTo(vertexFrom.getEdges().get(indexOfVertexList).getToVertex().getData()) == 1
                         ) {
 
                     indexOfVertexList++;
@@ -151,7 +151,7 @@ public class WeightDirectedGraph {
 
                 //중복된 값이 있으면 Return
                 if (indexOfVertexList < vertexFrom.getEdges().size()
-                        && vertexTo.getData().compareTo(vertexFrom.getEdges().get(indexOfVertexList).getVertex().getData()) == 0) {
+                        && vertexTo.getData().compareTo(vertexFrom.getEdges().get(indexOfVertexList).getToVertex().getData()) == 0) {
                     System.out.println("중복된 값 오류");
                     return false;
                 }
@@ -192,7 +192,7 @@ public class WeightDirectedGraph {
             for (Edge edge : vertexFrom.getEdges()) {
 
                 //값이 같다면 빼버린다.
-                if (edge.getVertex().equals(vertexTo)) {
+                if (edge.getToVertex().equals(vertexTo)) {
                     vertexFrom.getEdges().remove(edge);
                     vertexFrom.outDegree--;
                     vertexTo.inDegree--;
@@ -272,10 +272,10 @@ public class WeightDirectedGraph {
                      edgeIndex >= 0 ; edgeIndex--) {
 
 
-                    if (vertexFromStack.getEdges().get(edgeIndex).getVertex().processed != 2) {
-                        stack.push(vertexFromStack.getEdges().get(edgeIndex).getVertex());
+                    if (vertexFromStack.getEdges().get(edgeIndex).getToVertex().processed != 2) {
+                        stack.push(vertexFromStack.getEdges().get(edgeIndex).getToVertex());
                         // 스택에 추가했으니
-                        vertexFromStack.getEdges().get(edgeIndex).getVertex().processed = 1;
+                        vertexFromStack.getEdges().get(edgeIndex).getToVertex().processed = 1;
                     }
 
                 }
@@ -311,7 +311,7 @@ public class WeightDirectedGraph {
 
                 Edge edge = currentVertex.getEdges().get(currentVertex.getEdges().size() -1 -index);
 
-                stack.push(edge.getVertex());
+                stack.push(edge.getToVertex());
             }
         }
 
@@ -343,8 +343,8 @@ public class WeightDirectedGraph {
         // 현재 vertex의 edge들의 vertex에 대해서 processed=0이면 재귀호출한다.
         for(Edge edge : vertex.getEdges()){
 
-            if(edge.getVertex().processed == 0){
-                __depthVisit(edge.getVertex());
+            if(edge.getToVertex().processed == 0){
+                __depthVisit(edge.getToVertex());
             }
         }
 
@@ -392,11 +392,11 @@ public class WeightDirectedGraph {
                 for (int edgeIndex = 0; edgeIndex < vertexFromQueue.getEdges().size(); edgeIndex++) {
 
                     // queue에 추가 한적이 없다면
-                    if (vertexFromQueue.getEdges().get(edgeIndex).getVertex().processed == 0) {
-                        queue.add(vertexFromQueue.getEdges().get(edgeIndex).getVertex());
+                    if (vertexFromQueue.getEdges().get(edgeIndex).getToVertex().processed == 0) {
+                        queue.add(vertexFromQueue.getEdges().get(edgeIndex).getToVertex());
 
                         // queue에 추가했으니
-                        vertexFromQueue.getEdges().get(edgeIndex).getVertex().processed = 1;
+                        vertexFromQueue.getEdges().get(edgeIndex).getToVertex().processed = 1;
                     }
                 }
 
@@ -447,7 +447,7 @@ public class WeightDirectedGraph {
                 for (int index = 0; index < vertex.getEdges().size(); index++) {
 
                     System.out.print(" -(" + vertex.getEdges().get(index).getWeight() + ")"
-                            +"->" + vertex.getEdges().get(index).getVertex().getData().id );
+                            +"->" + vertex.getEdges().get(index).getToVertex().getData().id );
 
                 }
             }
@@ -532,8 +532,8 @@ public class WeightDirectedGraph {
                 //HashMap을 통해서 id에 해당하는 배열의 인덱스를 찾아서 1을 넣어준다
                 for(Edge edge : vertices.get(row).getEdges()){
 
-                    adjencyMatrix[row][hashMap.get(edge.getVertex().getData().id)] = edge.getWeight();
-                    //edge.getVertex().getData().id : 현재 Edge가 가지고 있는 Vetex의 id
+                    adjencyMatrix[row][hashMap.get(edge.getToVertex().getData().id)] = edge.getWeight();
+                    //edge.getToVertex().getData().id : 현재 Edge가 가지고 있는 Vetex의 id
                     //hashMap.get(id) : id를 통해서 배열의 index 값을 가져온다.
 
                 }
@@ -543,35 +543,6 @@ public class WeightDirectedGraph {
         }
 
 
-    }
-
-    // Point : Edge
-    public WeightDirectedGraph MSTByKruskal(){
-
-        WeightDirectedGraph tmpGraph = new WeightDirectedGraph();
-
-        
-
-
-        return tmpGraph;
-    }
-
-    // Point : Vertex
-    public WeightDirectedGraph MSTByPrim(){
-
-        WeightDirectedGraph tmpGraph = new WeightDirectedGraph();
-
-
-        return tmpGraph;
-    }
-
-    // Point : Forest
-    public WeightDirectedGraph MSTBySollin(){
-
-        WeightDirectedGraph tmpGraph = new WeightDirectedGraph();
-
-
-        return tmpGraph;
     }
 
     // Edge Weight가 음수이지 않은 경우!
@@ -643,7 +614,7 @@ public class WeightDirectedGraph {
 
         for(Edge edge : startVertex.getEdges()){
 
-            int v = idToArrayIndex.get(edge.getVertex().getData().id);
+            int v = idToArrayIndex.get(edge.getToVertex().getData().id);
 
             if(d[v] > d[startVertexArrayIndex] + edge.getWeight()) {
                 d[v] = d[startVertexArrayIndex] + edge.getWeight();
@@ -673,7 +644,7 @@ public class WeightDirectedGraph {
 
             for(Edge edge : pickedVertex.getEdges()){
 
-                int v = idToArrayIndex.get(edge.getVertex().getData().id);
+                int v = idToArrayIndex.get(edge.getToVertex().getData().id);
 
                 if(d[v] > d[shortestPathArrayIndex] + edge.getWeight()) {
                     d[v] = d[shortestPathArrayIndex] + edge.getWeight();
@@ -759,9 +730,9 @@ public class WeightDirectedGraph {
 
                 for(Edge edge : vertex.getEdges()){
 
-                    if(d[idToArrayIndex.get(vertex.getData().id)] + edge.getWeight() < d[idToArrayIndex.get(edge.getVertex().getData().id)]){
-                        d[idToArrayIndex.get(edge.getVertex().getData().id)] = d[idToArrayIndex.get(vertex.getData().id)] + edge.getWeight();
-                        p[idToArrayIndex.get(edge.getVertex().getData().id)] = idToArrayIndex.get(vertex.getData().id);
+                    if(d[idToArrayIndex.get(vertex.getData().id)] + edge.getWeight() < d[idToArrayIndex.get(edge.getToVertex().getData().id)]){
+                        d[idToArrayIndex.get(edge.getToVertex().getData().id)] = d[idToArrayIndex.get(vertex.getData().id)] + edge.getWeight();
+                        p[idToArrayIndex.get(edge.getToVertex().getData().id)] = idToArrayIndex.get(vertex.getData().id);
                     }
 
                 }
@@ -933,8 +904,8 @@ public class WeightDirectedGraph {
                 //HashMap을 통해서 id에 해당하는 배열의 인덱스를 찾아서 1을 넣어준다
                 for(Edge edge : vertices.get(row).getEdges()){
 
-                    adjencyMatrix[row][idToArrayIndex.get(edge.getVertex().getData().id)] = edge.getWeight();
-                    //edge.getVertex().getData().id : 현재 Edge가 가지고 있는 Vetex의 id
+                    adjencyMatrix[row][idToArrayIndex.get(edge.getToVertex().getData().id)] = edge.getWeight();
+                    //edge.getToVertex().getData().id : 현재 Edge가 가지고 있는 Vetex의 id
                     //hashMap.get(id) : id를 통해서 배열의 index 값을 가져온다.
 
                 }
@@ -948,10 +919,12 @@ public class WeightDirectedGraph {
     }
 
     //TODO : 음수의 가중치를 갖는지 판별하는 method
-    private boolean checkNegativeWeightCycle(){
+    private boolean hasNegativeCycle(){
 
 
         return false;
     }
+
+
 
 }

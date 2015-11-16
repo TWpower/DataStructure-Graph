@@ -2,6 +2,7 @@ import base.Data;
 import impl.DirectedGraph;
 import impl.UnDirectedGraph;
 import impl.WeightDirectedGraph;
+import impl.WeightUnDirectedGraph;
 
 public class Main {
 
@@ -284,7 +285,77 @@ public class Main {
 
 
 
+        /***
+         * Test Graph
+         */
 
+        // Graph created
+        WeightUnDirectedGraph weightUnDirectedGraph = new WeightUnDirectedGraph();
+        System.out.println("===Test Graph===");
+        System.out.println();
+
+        // insert vertices to graph
+        for (int i = 0; i < 7; i++)
+            weightUnDirectedGraph.insertVertex(dataArray[i]);
+
+        // print all vertices
+        System.out.println("Vertices : ");
+        weightUnDirectedGraph.printAllVertices();
+
+        // insert edges
+
+        // 1-4
+        weightUnDirectedGraph.insertEdge(weightUnDirectedGraph.retrieveVertex(1), weightUnDirectedGraph.retrieveVertex(4), 1);
+        // 4-10
+        weightUnDirectedGraph.insertEdge(weightUnDirectedGraph.retrieveVertex(4), weightUnDirectedGraph.retrieveVertex(10), 2);
+        // 10-25
+        weightUnDirectedGraph.insertEdge(weightUnDirectedGraph.retrieveVertex(10), weightUnDirectedGraph.retrieveVertex(25), 3);
+        // 25-9
+        weightUnDirectedGraph.insertEdge(weightUnDirectedGraph.retrieveVertex(25), weightUnDirectedGraph.retrieveVertex(9), 4);
+        // 9-7
+        weightUnDirectedGraph.insertEdge(weightUnDirectedGraph.retrieveVertex(9), weightUnDirectedGraph.retrieveVertex(7), 5);
+        // 9-4
+        weightUnDirectedGraph.insertEdge(weightUnDirectedGraph.retrieveVertex(9), weightUnDirectedGraph.retrieveVertex(4), 6);
+        // 4-7
+        weightUnDirectedGraph.insertEdge(weightUnDirectedGraph.retrieveVertex(4), weightUnDirectedGraph.retrieveVertex(7), 7);
+        // 25-14
+        weightUnDirectedGraph.insertEdge(weightUnDirectedGraph.retrieveVertex(25), weightUnDirectedGraph.retrieveVertex(14), 8);
+
+        // print graph after insert edges
+        System.out.println("Graph(After insert edges) : ");
+        weightUnDirectedGraph.printGraph();
+        System.out.println();
+
+        // delete edge
+
+        // cut 9-4
+        weightUnDirectedGraph.deleteEdge(weightUnDirectedGraph.retrieveVertex(9), weightUnDirectedGraph.retrieveVertex(4));
+
+
+        // print graph after delete edge
+        System.out.println("Graph(After delete edges) : ");
+        weightUnDirectedGraph.printGraph();
+        System.out.println();
+
+        // delete vertex
+        weightUnDirectedGraph.deleteVertex(14);
+        System.out.println();
+
+        System.out.println("Graph(After delete vertex) : ");
+        weightUnDirectedGraph.printGraph();
+        System.out.println();
+
+        System.out.println("MSTByKruskal");
+        weightUnDirectedGraph.MSTByKruskal().printGraph();
+        System.out.println();
+
+        System.out.println("MSTByPrim");
+        weightUnDirectedGraph.MSTByPrim().printGraph();
+        System.out.println();
+
+        System.out.println("MSTBySollin");
+        weightUnDirectedGraph.MSTBySollin().printGraph();
+        System.out.println();
 
     }
 }
