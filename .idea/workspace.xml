@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ec66a69-956a-4354-96e0-fc5032def6c7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/impl/WeightUnDirectedGraph.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GraphSimulation/Main.class" afterPath="$PROJECT_DIR$/out/production/GraphSimulation/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GraphSimulation/base/Edge.class" afterPath="$PROJECT_DIR$/out/production/GraphSimulation/base/Edge.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GraphSimulation/impl/DirectedGraph.class" afterPath="$PROJECT_DIR$/out/production/GraphSimulation/impl/DirectedGraph.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GraphSimulation/impl/UnDirectedGraph.class" afterPath="$PROJECT_DIR$/out/production/GraphSimulation/impl/UnDirectedGraph.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GraphSimulation/impl/WeightDirectedGraph.class" afterPath="$PROJECT_DIR$/out/production/GraphSimulation/impl/WeightDirectedGraph.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/base/Edge.java" afterPath="$PROJECT_DIR$/src/base/Edge.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/impl/DirectedGraph.java" afterPath="$PROJECT_DIR$/src/impl/DirectedGraph.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/impl/UnDirectedGraph.java" afterPath="$PROJECT_DIR$/src/impl/UnDirectedGraph.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/impl/WeightDirectedGraph.java" afterPath="$PROJECT_DIR$/src/impl/WeightDirectedGraph.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/impl/WeightUnDirectedGraph.java" afterPath="$PROJECT_DIR$/src/impl/WeightUnDirectedGraph.java" />
     </list>
     <ignored path="GraphSimulation.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,15 +37,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WeightUnDirectedGraph.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WeightUnDirectedGraph.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/impl/WeightUnDirectedGraph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="635" column="0" selection-start-line="635" selection-start-column="0" selection-end-line="635" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.44717446">
+              <caret line="682" column="0" selection-start-line="682" selection-start-column="0" selection-end-line="682" selection-end-column="0" />
               <folding>
+                <element signature="method#WeightUnDirectedGraph#0;class#WeightUnDirectedGraph#0" expanded="false" />
+                <element signature="method#insertVertex#0;class#WeightUnDirectedGraph#0" expanded="false" />
+                <element signature="method#deleteVertex#0;class#WeightUnDirectedGraph#0" expanded="false" />
+                <element signature="method#__insertEdge#0;class#WeightUnDirectedGraph#0" expanded="false" />
+                <element signature="method#insertEdge#0;class#WeightUnDirectedGraph#0" expanded="false" />
+                <element signature="method#__deleteEdge#0;class#WeightUnDirectedGraph#0" expanded="false" />
+                <element signature="method#deleteEdge#0;class#WeightUnDirectedGraph#0" expanded="false" />
+                <element signature="method#retrieveVertex#0;class#WeightUnDirectedGraph#0" expanded="false" />
+                <element signature="method#depthFirstSearch#0;class#WeightUnDirectedGraph#0" expanded="false" />
+                <element signature="method#depthFirstSerachByStack#0;class#WeightUnDirectedGraph#0" expanded="false" />
+                <element signature="method#depthFirstSearchByRecursion#0;class#WeightUnDirectedGraph#0" expanded="false" />
+                <element signature="method#__depthVisit#0;class#WeightUnDirectedGraph#0" expanded="false" />
+                <element signature="method#breadthFirstSearch#0;class#WeightUnDirectedGraph#0" expanded="false" />
+                <element signature="method#numberOfVertices#0;class#WeightUnDirectedGraph#0" expanded="false" />
+                <element signature="method#printAllVertices#0;class#WeightUnDirectedGraph#0" expanded="false" />
+                <element signature="method#printEdges#0;class#WeightUnDirectedGraph#0" expanded="false" />
+                <element signature="method#printGraph#0;class#WeightUnDirectedGraph#0" expanded="false" />
+                <element signature="method#printAdjacencyMatrix#0;class#WeightUnDirectedGraph#0" expanded="false" />
+                <element signature="method#makeAdjacencyMatrix#0;class#WeightUnDirectedGraph#0" expanded="false" />
+                <element signature="method#MSTByKruskal#0;class#WeightUnDirectedGraph#0" expanded="false" />
                 <element signature="method#sameEdge#0;class#WeightUnDirectedGraph#0" expanded="false" />
                 <element signature="method#MSTByPrim#0;class#WeightUnDirectedGraph#0" expanded="false" />
                 <element signature="method#insertEdgeToList#0;class#WeightUnDirectedGraph#0" expanded="false" />
+                <element signature="method#hasCycle#0;class#WeightUnDirectedGraph#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -89,11 +100,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WeightDirectedGraph.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WeightDirectedGraph.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/impl/WeightDirectedGraph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.2344499">
-              <caret line="126" column="54" selection-start-line="126" selection-start-column="54" selection-end-line="126" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="670" column="0" selection-start-line="670" selection-start-column="0" selection-end-line="670" selection-end-column="0" />
               <folding>
                 <element signature="method#insertVertex#0;class#WeightDirectedGraph#0" expanded="false" />
                 <element signature="method#deleteVertex#0;class#WeightDirectedGraph#0" expanded="false" />
@@ -110,8 +121,9 @@
                 <element signature="method#printGraph#0;class#WeightDirectedGraph#0" expanded="false" />
                 <element signature="method#printAdjacencyMatrix#0;class#WeightDirectedGraph#0" expanded="false" />
                 <element signature="method#makeAdjacencyMatrix#0;class#WeightDirectedGraph#0" expanded="false" />
+                <element signature="method#ShortestPathByBellman_Ford#0;class#WeightDirectedGraph#0" expanded="false" />
+                <element signature="method#ShortestPathByFloyd_Warshall#0;class#WeightDirectedGraph#0" expanded="false" />
                 <element signature="method#makeAdjacencyMatrixForSP#0;class#WeightDirectedGraph#0" expanded="false" />
-                <element signature="method#hasNegativeCycle#0;class#WeightDirectedGraph#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -146,9 +158,9 @@
         <option value="$PROJECT_DIR$/src/base/Vertex.java" />
         <option value="$PROJECT_DIR$/src/impl/DirectedGraph.java" />
         <option value="$PROJECT_DIR$/src/impl/UnDirectedGraph.java" />
-        <option value="$PROJECT_DIR$/src/impl/WeightDirectedGraph.java" />
         <option value="$PROJECT_DIR$/src/base/Edge.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/impl/WeightDirectedGraph.java" />
         <option value="$PROJECT_DIR$/src/impl/WeightUnDirectedGraph.java" />
       </list>
     </option>
@@ -166,9 +178,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-10" />
-    <option name="width" value="1924" />
-    <option name="height" value="1030" />
+    <option name="x" value="-11" />
+    <option name="y" value="-11" />
+    <option name="width" value="1942" />
+    <option name="height" value="1042" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -196,7 +209,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -267,7 +280,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -722,41 +735,51 @@
       <workItem from="1447405378934" duration="12000" />
       <workItem from="1447415255216" duration="1178000" />
       <workItem from="1447437221808" duration="101000" />
-      <workItem from="1447643267656" duration="49000" />
+      <workItem from="1447643267656" duration="2782000" />
+      <workItem from="1447650111964" duration="3448000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206405000" />
+    <option name="totallyTimeSpent" value="212586000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-10" y="0" width="1924" height="1030" extended-state="1" />
-    <editor active="true" />
+    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32902467" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3877791" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6921269" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.100946374" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2106681" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6757062" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18870057" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38870057" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19096045" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6757062" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18870057" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -775,7 +798,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="226" />
+      <option name="time" value="232" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -903,11 +926,9 @@
             <element signature="method#printGraph#0;class#WeightDirectedGraph#0" expanded="false" />
             <element signature="method#printAdjacencyMatrix#0;class#WeightDirectedGraph#0" expanded="false" />
             <element signature="method#makeAdjacencyMatrix#0;class#WeightDirectedGraph#0" expanded="false" />
-            <element signature="method#ShortestPathByDijkstra#0;class#WeightDirectedGraph#0" expanded="false" />
             <element signature="method#ShortestPathByBellman_Ford#0;class#WeightDirectedGraph#0" expanded="false" />
             <element signature="method#ShortestPathByFloyd_Warshall#0;class#WeightDirectedGraph#0" expanded="false" />
             <element signature="method#makeAdjacencyMatrixForSP#0;class#WeightDirectedGraph#0" expanded="false" />
-            <element signature="method#hasNegativeCycle#0;class#WeightDirectedGraph#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1362,22 +1383,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/impl/WeightUnDirectedGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="635" column="0" selection-start-line="635" selection-start-column="0" selection-end-line="635" selection-end-column="0" />
-          <folding>
-            <element signature="method#sameEdge#0;class#WeightUnDirectedGraph#0" expanded="false" />
-            <element signature="method#MSTByPrim#0;class#WeightUnDirectedGraph#0" expanded="false" />
-            <element signature="method#insertEdgeToList#0;class#WeightUnDirectedGraph#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/impl/WeightDirectedGraph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.2344499">
-          <caret line="126" column="54" selection-start-line="126" selection-start-column="54" selection-end-line="126" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="670" column="0" selection-start-line="670" selection-start-column="0" selection-end-line="670" selection-end-column="0" />
           <folding>
             <element signature="method#insertVertex#0;class#WeightDirectedGraph#0" expanded="false" />
             <element signature="method#deleteVertex#0;class#WeightDirectedGraph#0" expanded="false" />
@@ -1394,11 +1403,42 @@
             <element signature="method#printGraph#0;class#WeightDirectedGraph#0" expanded="false" />
             <element signature="method#printAdjacencyMatrix#0;class#WeightDirectedGraph#0" expanded="false" />
             <element signature="method#makeAdjacencyMatrix#0;class#WeightDirectedGraph#0" expanded="false" />
-            <element signature="method#ShortestPathByDijkstra#0;class#WeightDirectedGraph#0" expanded="false" />
             <element signature="method#ShortestPathByBellman_Ford#0;class#WeightDirectedGraph#0" expanded="false" />
             <element signature="method#ShortestPathByFloyd_Warshall#0;class#WeightDirectedGraph#0" expanded="false" />
             <element signature="method#makeAdjacencyMatrixForSP#0;class#WeightDirectedGraph#0" expanded="false" />
-            <element signature="method#hasNegativeCycle#0;class#WeightDirectedGraph#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/impl/WeightUnDirectedGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44717446">
+          <caret line="682" column="0" selection-start-line="682" selection-start-column="0" selection-end-line="682" selection-end-column="0" />
+          <folding>
+            <element signature="method#WeightUnDirectedGraph#0;class#WeightUnDirectedGraph#0" expanded="false" />
+            <element signature="method#insertVertex#0;class#WeightUnDirectedGraph#0" expanded="false" />
+            <element signature="method#deleteVertex#0;class#WeightUnDirectedGraph#0" expanded="false" />
+            <element signature="method#__insertEdge#0;class#WeightUnDirectedGraph#0" expanded="false" />
+            <element signature="method#insertEdge#0;class#WeightUnDirectedGraph#0" expanded="false" />
+            <element signature="method#__deleteEdge#0;class#WeightUnDirectedGraph#0" expanded="false" />
+            <element signature="method#deleteEdge#0;class#WeightUnDirectedGraph#0" expanded="false" />
+            <element signature="method#retrieveVertex#0;class#WeightUnDirectedGraph#0" expanded="false" />
+            <element signature="method#depthFirstSearch#0;class#WeightUnDirectedGraph#0" expanded="false" />
+            <element signature="method#depthFirstSerachByStack#0;class#WeightUnDirectedGraph#0" expanded="false" />
+            <element signature="method#depthFirstSearchByRecursion#0;class#WeightUnDirectedGraph#0" expanded="false" />
+            <element signature="method#__depthVisit#0;class#WeightUnDirectedGraph#0" expanded="false" />
+            <element signature="method#breadthFirstSearch#0;class#WeightUnDirectedGraph#0" expanded="false" />
+            <element signature="method#numberOfVertices#0;class#WeightUnDirectedGraph#0" expanded="false" />
+            <element signature="method#printAllVertices#0;class#WeightUnDirectedGraph#0" expanded="false" />
+            <element signature="method#printEdges#0;class#WeightUnDirectedGraph#0" expanded="false" />
+            <element signature="method#printGraph#0;class#WeightUnDirectedGraph#0" expanded="false" />
+            <element signature="method#printAdjacencyMatrix#0;class#WeightUnDirectedGraph#0" expanded="false" />
+            <element signature="method#makeAdjacencyMatrix#0;class#WeightUnDirectedGraph#0" expanded="false" />
+            <element signature="method#MSTByKruskal#0;class#WeightUnDirectedGraph#0" expanded="false" />
+            <element signature="method#sameEdge#0;class#WeightUnDirectedGraph#0" expanded="false" />
+            <element signature="method#MSTByPrim#0;class#WeightUnDirectedGraph#0" expanded="false" />
+            <element signature="method#insertEdgeToList#0;class#WeightUnDirectedGraph#0" expanded="false" />
+            <element signature="method#hasCycle#0;class#WeightUnDirectedGraph#0" expanded="false" />
           </folding>
         </state>
       </provider>

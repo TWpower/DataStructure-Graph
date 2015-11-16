@@ -565,14 +565,17 @@ public class WeightUnDirectedGraph {
 
         WeightUnDirectedGraph tmpGraph = new WeightUnDirectedGraph();
 
-
+        // Use this as a Heap
         LinkedList<Edge> edgeList = new LinkedList<>();
+
 
 
         // Put edges to the edgeList(sort by weight)
         for (Vertex currentVertex : vertices) {
             for (Edge currentEdge : currentVertex.getEdges()) {
 
+                insertEdgeToList(edgeList,currentEdge);
+/*
                 int indexOfVertexList = 0;
                 boolean hasSameEdge = false;
 
@@ -590,6 +593,7 @@ public class WeightUnDirectedGraph {
 
                 }
 
+                // Find position of current edge
                 while (indexOfVertexList < edgeList.size() &&
                         edgeList.get(indexOfVertexList).getWeight() <= currentEdge.getWeight()
                         ) {
@@ -609,43 +613,40 @@ public class WeightUnDirectedGraph {
                     continue;
 
                 edgeList.add(indexOfVertexList, currentEdge);
-
+*/
             }
         }
 
-        // making edgeList sort by weight is done
-
-        int edgeCount = 0;
 
         // Make new Graph(Tree) by using edgeList
         while (!edgeList.isEmpty()) {
 
             Edge edge = edgeList.removeFirst();
 
+            // Make new vertex for tmpGraph
             if (tmpGraph.retrieveVertex(edge.getFromVertex().getData().id) == null)
                 tmpGraph.insertVertex(new Data(edge.getFromVertex().getData().id));
 
             if (tmpGraph.retrieveVertex(edge.getToVertex().getData().id) == null)
                 tmpGraph.insertVertex(new Data(edge.getToVertex().getData().id));
 
-            if (tmpGraph.insertEdge(
+            // insert Edge and Weight between vertices
+            tmpGraph.insertEdge(
                     tmpGraph.retrieveVertex(edge.getFromVertex().getData().id)
                     , tmpGraph.retrieveVertex(edge.getToVertex().getData().id)
-                    , edge.getWeight()))
-                edgeCount++;
+                    , edge.getWeight());
 
 
+            // Check if there is a cycle
             if (tmpGraph.hasCycle()) {
+                // if there is a cycle
+                // then delete edge
                 tmpGraph.deleteEdge(
                         tmpGraph.retrieveVertex(edge.getFromVertex().getData().id)
                         , tmpGraph.retrieveVertex(edge.getToVertex().getData().id));
-                edgeCount--;
                 System.out.println("Cycle Exist");
             }
 
-            // Tree : |V| = |E| - 1
-            if (vertices.size() == edgeCount - 1)
-                break;
         }
 
 
@@ -680,17 +681,7 @@ public class WeightUnDirectedGraph {
 
     }
 
-
     // Point : Vertex
-    /**
-     *
-     1. ????
-     2. Heap? Weight ???? ??
-     3. Heap?? ?? ?? ?? ?? ??
-     4. ? Heap?? ?? Edge? toVertex? ?? ?????? ??
-     4-1. ???? ???? ???? Hedap? ? toVertex?? Edge?? ??(Same?? ??? ??)
-     4-2. ?????? ? vertex? ??? ?? Edge? ???
-     */
     public WeightUnDirectedGraph MSTByPrim() {
 
         if (vertices.size() == 0)
@@ -705,7 +696,7 @@ public class WeightUnDirectedGraph {
 
         // Get First tmpGraph Vertex
         Vertex currentVertex = vertices.getFirst();
-        Vertex nextVertex = null;
+        Vertex nextVertex;
 
         //Insert First Vertex Edges
         for(Edge edge : currentVertex.getEdges()){
@@ -714,38 +705,31 @@ public class WeightUnDirectedGraph {
 
         }
 
-        int edgeCount = 0;
 
         while (edgeList.size() != 0) {
 
             // First One is lowest Weight Edge
             Edge edge = edgeList.removeFirst();
 
+            // Vertex Exist => Already lowest weight path exist
             if(tmpGraph.retrieveVertex(edge.getToVertex().getData().id) != null)
                 continue;
 
+            // insert Vertex
             tmpGraph.insertVertex(new Data(edge.getToVertex().getData().id));
 
             nextVertex = edge.getToVertex();
 
+            // insert edge between two vertices
             tmpGraph.insertEdge(tmpGraph.retrieveVertex(edge.getFromVertex().getData().id)
                     , tmpGraph.retrieveVertex(edge.getToVertex().getData().id)
                     , edge.getWeight());
 
-            edgeCount++;
-
-            currentVertex = nextVertex;
-
+            // insert next Vertex's Edges
             for(Edge tmpEdge : nextVertex.getEdges()){
                 insertEdgeToList(edgeList, tmpEdge);
             }
-
-            // Tree : |V| = |E| - 1
-            if (tmpGraph.vertices.size() == edgeCount - 1)
-                break;
-
         }
-
 
         return tmpGraph;
     }
@@ -792,6 +776,7 @@ public class WeightUnDirectedGraph {
     }
 
     // Point : Forest
+    // TODO : Make Sollin
     public WeightUnDirectedGraph MSTBySollin() {
 
         WeightUnDirectedGraph tmpGraph = new WeightUnDirectedGraph();
@@ -800,13 +785,15 @@ public class WeightUnDirectedGraph {
         return tmpGraph;
     }
 
+    // Using DFS Concept
     private boolean hasCycle() {
 
-        // vertex???????????? processed?????? ????????? 0???????????? ????????
+        // set processed to 0
         for (Vertex vertex : vertices) {
             vertex.processed = 0;
         }
 
+        // Stack for parent and vertices
         Stack<Vertex> stack = new Stack();
         Stack<Vertex> parentStack = new Stack<>();
 
@@ -825,11 +812,13 @@ public class WeightUnDirectedGraph {
 
             for (Edge edge : currentVertex.getEdges()) {
 
+                // toVertex == parentVertex && toVertex == 1
+                // is is processed and not a parent Vertex => already visited => Cycle!
                 if (!edge.getToVertex().equals(parentVertex)
                         && edge.getToVertex().processed == 1)
                     return true;
 
-                // 1. push to stack if it is not a parent Vertex
+                //  push to stack if it is not a parent Vertex
                 if (!edge.getToVertex().equals(parentVertex)) {
                     stack.push(edge.getToVertex());
                     parentStack.push(currentVertex);

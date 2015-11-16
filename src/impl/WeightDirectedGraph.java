@@ -550,7 +550,6 @@ public class WeightDirectedGraph {
     public Distance ShortestPathByDijkstra(Vertex startVertex, Vertex destinationVertex){
 
         // 값이 있는지 확인
-
         if (vertices.indexOf(startVertex) == -1 || vertices.indexOf(destinationVertex) == -1)
             return null;
 
@@ -569,32 +568,25 @@ public class WeightDirectedGraph {
         HashMap<Integer, Integer> arrayIndexToId = new HashMap<>();
 
         //해시맵을 통해서 대응 시킴
-        // value : id of Vertex, key : index of Array
+        //key : index of Array, value : id of Vertex
         for(int index=0; index < vertices.size() ; index++){
 
             arrayIndexToId.put(index, vertices.get(index).getData().id);
 
         }
 
-        // 계산을 빠르게 하기 위한 인접행렬
-
-        int[][] weightAdjacencyMatrix = makeAdjacencyMatrixForSP();
-
-        // 거리를 저장하기 위한 배열 d와 이전 위치를 저장하기위한 배열p
+        // 거리를 저장하기 위한 배열 d
+        // 이전 위치를 저장하기위한 배열 p
 
         int []d = new int[vertices.size()]; // distance
-        Arrays.fill(d,INF);
+        Arrays.fill(d,INF); // 처음 거리는 정해지지 않았으므로 거리는 INF
         int []p = new int[vertices.size()]; // previous stop
-        Arrays.fill(p,-1); // id가 0 이상이므로 아직 정해지지 않은 부분에 대해서는 -1로 설정
+        Arrays.fill(p,-1); // 아직 정해지지 않은 부분에 대해서는 -1로 설정
 
         // 처리 전과 후를 위한 List
         LinkedList<Vertex> before = new LinkedList<>();
         before.addAll(vertices);
-        /*
-        for(int i = 0 ; i < vertices.size() ; i++){
-            before.add(i);
-        }
-        */
+
         LinkedList<Vertex> after = new LinkedList<>();
 
         // startVertex의 id와 destinaionVertex의 id를 저장하는 변수
@@ -612,6 +604,8 @@ public class WeightDirectedGraph {
 
         after.add(before.remove(before.indexOf(startVertex)));
 
+        // 처음 시작하는 Vertex에 연결된 Edge들의 Weight를 통해서 거리를 구하고 d에 표시
+
         for(Edge edge : startVertex.getEdges()){
 
             int v = idToArrayIndex.get(edge.getToVertex().getData().id);
@@ -623,6 +617,7 @@ public class WeightDirectedGraph {
         }
 
         //나머지 부분들 처리
+        //before에 있는 모든 Vertex들을 꺼내서 처리하면 완료!
 
         while(before.size() != 0){
 
@@ -676,7 +671,6 @@ public class WeightDirectedGraph {
     public Distance ShortestPathByBellman_Ford(Vertex startVertex, Vertex destinationVertex){
 
         // 값이 있는지 확인
-
         if (vertices.indexOf(startVertex) == -1 || vertices.indexOf(destinationVertex) == -1)
             return null;
 
@@ -685,7 +679,7 @@ public class WeightDirectedGraph {
         HashMap<Integer, Integer> idToArrayIndex = new HashMap<>();
 
         //해시맵을 통해서 대응 시킴
-        // key : id of Vertex, value : index of Array
+        //key : id of Vertex, value : index of Array
         for(int index=0; index < vertices.size() ; index++){
 
             idToArrayIndex.put(vertices.get(index).getData().id, index);
@@ -695,21 +689,17 @@ public class WeightDirectedGraph {
         HashMap<Integer, Integer> arrayIndexToId = new HashMap<>();
 
         //해시맵을 통해서 대응 시킴
-        // value : id of Vertex, key : index of Array
+        //key : index of Array, value : id of Vertex
         for(int index=0; index < vertices.size() ; index++){
 
             arrayIndexToId.put(index, vertices.get(index).getData().id);
 
         }
 
-        // 계산을 빠르게 하기 위한 인접행렬
-
-        int[][] weightAdjacencyMatrix = makeAdjacencyMatrixForSP();
-
         int []d = new int[vertices.size()]; // distance
         Arrays.fill(d,INF);
         int []p = new int[vertices.size()]; // previous stop
-        Arrays.fill(p,-1); // id가 0 이상이므로 아직 정해지지 않은 부분에 대해서는 -1로 설정
+        Arrays.fill(p,-1); //아직 정해지지 않은 부분에 대해서는 -1로 설정
 
         // startVertex의 id와 destinaionVertex의 id를 저장하는 변수
         int startVertexId = startVertex.getData().id;
@@ -720,17 +710,21 @@ public class WeightDirectedGraph {
         int destinationVertexArrayIndex = idToArrayIndex.get(destinationVertexId);
 
         // 처음부분을 거리를 0으로 설정
-
         d[startVertexArrayIndex] = 0;
 
-
+        // 전체 vertex의 수 -1 만큼 아래의 작업을 반복한다.
         for(int count=0 ; count < vertices.size() -1 ; count++){
 
+            // 각각의 vertex에 대해
             for(Vertex vertex : vertices){
 
+                // 각각의 Edge에 대해서
                 for(Edge edge : vertex.getEdges()){
 
+                    //현재 vertex까지의 거리에서 연결된 edge의 가중치를 더한게 향하고 있는 Vertex까지의 거리보다 짧다면
                     if(d[idToArrayIndex.get(vertex.getData().id)] + edge.getWeight() < d[idToArrayIndex.get(edge.getToVertex().getData().id)]){
+
+                        //그 값을 갱신해주고 이전 위치를 기억한다(p)
                         d[idToArrayIndex.get(edge.getToVertex().getData().id)] = d[idToArrayIndex.get(vertex.getData().id)] + edge.getWeight();
                         p[idToArrayIndex.get(edge.getToVertex().getData().id)] = idToArrayIndex.get(vertex.getData().id);
                     }
@@ -763,15 +757,15 @@ public class WeightDirectedGraph {
 
 
         // 값이 있는지 확인
-
         if (vertices.indexOf(startVertex) == -1 || vertices.indexOf(destinationVertex) == -1)
             return null;
+
 
         //Vertex의 id와 배열의 index를 matching 시키기 위한 해시맵
         HashMap<Integer, Integer> idToArrayIndex = new HashMap<>();
 
         //해시맵을 통해서 대응 시킴
-        // key : id of Vertex, value : index of Array
+        //key : id of Vertex, value : index of Array
         for(int index=0; index < vertices.size() ; index++){
 
             idToArrayIndex.put(vertices.get(index).getData().id, index);
@@ -781,7 +775,7 @@ public class WeightDirectedGraph {
         HashMap<Integer, Integer> arrayIndexToId = new HashMap<>();
 
         //해시맵을 통해서 대응 시킴
-        // value : id of Vertex, key : index of Array
+        //key : index of Array,  value : id of Vertex
         for(int index=0; index < vertices.size() ; index++){
 
             arrayIndexToId.put(index, vertices.get(index).getData().id);
@@ -791,6 +785,7 @@ public class WeightDirectedGraph {
 
         int [][] weightMatrix = makeAdjacencyMatrixForSP();
 
+        // TODO : 아래 알고리즘 설명해야함 -> PT에서 기본으로 설명
         int i, j, stop;
 
         for (stop = 0; stop < vertices.size(); stop++) {
@@ -806,7 +801,6 @@ public class WeightDirectedGraph {
         }
 
         // 경로 계산 끝
-
         if(weightMatrix[idToArrayIndex.get(startVertex.getData().id)][idToArrayIndex.get(destinationVertex.getData().id)] == INF){
             // 경로가 존재하지 않는 경우
 
@@ -828,16 +822,14 @@ public class WeightDirectedGraph {
         //처음에 목적지 id에 해당하는 index를 track index로 지정
         int trackIndex = idToArrayIndex.get(destinationVertex.getData().id);
 
-
-        // 여기까지 문제 없음
-
         while(true){
 
             int trackRow = 0;
 
             for(int row = 0 ; row < vertices.size(); row ++){
 
-                if(weightMatrix[trackRow][trackIndex] > weightMatrix[row][trackIndex]
+                // 행들을 하나하나 조사하면서 trackIndex까지의 최단거리인 row를 trackRow에 넣어준다다
+               if(weightMatrix[trackRow][trackIndex] > weightMatrix[row][trackIndex]
                         && (row !=trackIndex))
                     trackRow = row;
 
@@ -917,14 +909,5 @@ public class WeightDirectedGraph {
         }
 
     }
-
-    //TODO : 음수의 가중치를 갖는지 판별하는 method
-    private boolean hasNegativeCycle(){
-
-
-        return false;
-    }
-
-
 
 }
