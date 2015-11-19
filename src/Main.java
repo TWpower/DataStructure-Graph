@@ -295,7 +295,7 @@ public class Main {
         System.out.println();
 
         // insert vertices to graph
-        for (int i = 0; i < 7; i++)
+        for (int i = 0; i < 6; i++)
             weightUnDirectedGraph.insertVertex(dataArray[i]);
 
         // print all vertices
@@ -305,43 +305,26 @@ public class Main {
         // insert edges
 
         // 1-4
-        weightUnDirectedGraph.insertEdge(weightUnDirectedGraph.retrieveVertex(1), weightUnDirectedGraph.retrieveVertex(4), 1);
-        // 4-10
-        weightUnDirectedGraph.insertEdge(weightUnDirectedGraph.retrieveVertex(4), weightUnDirectedGraph.retrieveVertex(10), 2);
-        // 10-25
-        weightUnDirectedGraph.insertEdge(weightUnDirectedGraph.retrieveVertex(10), weightUnDirectedGraph.retrieveVertex(25), 3);
-        // 25-9
-        weightUnDirectedGraph.insertEdge(weightUnDirectedGraph.retrieveVertex(25), weightUnDirectedGraph.retrieveVertex(9), 4);
-        // 9-7
-        weightUnDirectedGraph.insertEdge(weightUnDirectedGraph.retrieveVertex(9), weightUnDirectedGraph.retrieveVertex(7), 5);
-        // 9-4
-        weightUnDirectedGraph.insertEdge(weightUnDirectedGraph.retrieveVertex(9), weightUnDirectedGraph.retrieveVertex(4), 6);
+        weightUnDirectedGraph.insertEdge(weightUnDirectedGraph.retrieveVertex(1), weightUnDirectedGraph.retrieveVertex(4), 2);
         // 4-7
-        weightUnDirectedGraph.insertEdge(weightUnDirectedGraph.retrieveVertex(4), weightUnDirectedGraph.retrieveVertex(7), 7);
-        // 25-14
-        weightUnDirectedGraph.insertEdge(weightUnDirectedGraph.retrieveVertex(25), weightUnDirectedGraph.retrieveVertex(14), 8);
+        weightUnDirectedGraph.insertEdge(weightUnDirectedGraph.retrieveVertex(4), weightUnDirectedGraph.retrieveVertex(7), 6);
+        // 1-7
+        weightUnDirectedGraph.insertEdge(weightUnDirectedGraph.retrieveVertex(1), weightUnDirectedGraph.retrieveVertex(7), 4);
+        // 4-9
+        weightUnDirectedGraph.insertEdge(weightUnDirectedGraph.retrieveVertex(4), weightUnDirectedGraph.retrieveVertex(9), 7);
+        // 9-7
+        weightUnDirectedGraph.insertEdge(weightUnDirectedGraph.retrieveVertex(9), weightUnDirectedGraph.retrieveVertex(7), 3);
+        // 7-10
+        weightUnDirectedGraph.insertEdge(weightUnDirectedGraph.retrieveVertex(7), weightUnDirectedGraph.retrieveVertex(10), 8);
+        // 9-25
+        weightUnDirectedGraph.insertEdge(weightUnDirectedGraph.retrieveVertex(9), weightUnDirectedGraph.retrieveVertex(25), 1);
+        // 9-10
+        weightUnDirectedGraph.insertEdge(weightUnDirectedGraph.retrieveVertex(9), weightUnDirectedGraph.retrieveVertex(10), 8);
+        // 10-25
+        weightUnDirectedGraph.insertEdge(weightUnDirectedGraph.retrieveVertex(10), weightUnDirectedGraph.retrieveVertex(25), 5);
 
         // print graph after insert edges
         System.out.println("Graph(After insert edges) : ");
-        weightUnDirectedGraph.printGraph();
-        System.out.println();
-
-        // delete edge
-
-        // cut 9-4
-        weightUnDirectedGraph.deleteEdge(weightUnDirectedGraph.retrieveVertex(9), weightUnDirectedGraph.retrieveVertex(4));
-
-
-        // print graph after delete edge
-        System.out.println("Graph(After delete edges) : ");
-        weightUnDirectedGraph.printGraph();
-        System.out.println();
-
-        // delete vertex
-        weightUnDirectedGraph.deleteVertex(14);
-        System.out.println();
-
-        System.out.println("Graph(After delete vertex) : ");
         weightUnDirectedGraph.printGraph();
         System.out.println();
 

@@ -682,6 +682,10 @@ public class WeightUnDirectedGraph {
     }
 
     // Point : Vertex
+    // 1. Remove Edge from PQ
+    // 2. check edge's toVertex is in Graph
+    // 3. if toVertex is not exist then add that vertex to the graph and edges
+    // 3-1. if to Vertex is exist in Graph then ignore this Edge
     public WeightUnDirectedGraph MSTByPrim() {
 
         if (vertices.size() == 0)
@@ -776,13 +780,119 @@ public class WeightUnDirectedGraph {
     }
 
     // Point : Forest
-    // TODO : Make Sollin
     public WeightUnDirectedGraph MSTBySollin() {
 
-        WeightUnDirectedGraph tmpGraph = new WeightUnDirectedGraph();
+       LinkedList<WeightUnDirectedGraph> graphLinkedList = new LinkedList<>();
+
+        for(int i = 0 ; i < vertices.size() ; i ++){
+            graphLinkedList.add(new WeightUnDirectedGraph());
+        }
+
+        // 각각의 vertex에 대해서 graph라고 만듦
+        for(int i = 0 ; i < vertices.size() ; i ++){
+            graphLinkedList.get(i).insertVertex(new Data(vertices.get(i).getData().id));
+        }
+
+        // TODO : 수정
+         int index = 0;
+        WeightUnDirectedGraph currentGraph;
+
+         // While T has more than one component:
+        while(graphLinkedList.size() > 1){
+
+            if(index >= graphLinkedList.size())
+                index = 0;
 
 
-        return tmpGraph;
+            // For each component C of T:
+            currentGraph = graphLinkedList.get(index);
+
+                // Begin with an empty set of edges S
+                LinkedList<Edge> edgeList = new LinkedList<>();
+
+                // For each vertex v in C:
+                for(Vertex currentVertex : currentGraph.vertices){
+
+                    // Find the cheapest edge from v to a vertex outside of C, and add it to S
+
+                    // 현재 큰 그래프에서 찾음
+                    Vertex vertex = retrieveVertex(currentVertex.getData().id);
+
+                    for(Edge edge : vertex.getEdges()){
+
+                        if(currentGraph.retrieveVertex(edge.getToVertex().getData().id) == null)
+                            insertEdgeToList(edgeList, edge);
+
+                    }
+
+                }
+
+                int graphIndex = findGraphIndex(graphLinkedList, edgeList.getFirst().getToVertex());
+
+                // Add the cheapest edge in S to T
+
+                if(mergeGraph(currentGraph, graphLinkedList.get(graphIndex), edgeList.removeFirst()))
+                    graphLinkedList.remove(graphIndex);
+
+            index++;
+
+
+        }
+
+        return graphLinkedList.getFirst();
+    }
+
+    private int findGraphIndex(LinkedList<WeightUnDirectedGraph> graphLinkedList ,Vertex vertex){
+
+        int graphIndex =0;
+
+        for(;graphIndex < graphLinkedList.size() ; graphIndex++){
+
+            // vertex is exist
+          if(graphLinkedList.get(graphIndex).retrieveVertex(vertex.getData().id)  != null)
+              break;
+        }
+
+        return graphIndex;
+    }
+
+    // TODO : Merge Graph가 문제였다.
+    private boolean mergeGraph(WeightUnDirectedGraph toGraph, WeightUnDirectedGraph fromGraph, Edge edge){
+
+        // to에다가 from을 가져다가 붙임
+        // 두 그래프는 Disjoint이며 vertex와 edge가 모두 다르다
+
+        LinkedList<Edge> edgeList = new LinkedList<>();
+
+        for(int i = 0 ; i < fromGraph.size ; i ++){
+
+            if(!toGraph.vertices.contains(fromGraph.vertices.get(i)))
+            toGraph.insertVertex(new Data(fromGraph.vertices.get(i).getData().id));
+
+
+            for(Edge tmpEdge : fromGraph.vertices.get(i).getEdges()){
+
+                insertEdgeToList(edgeList, tmpEdge);
+
+            }
+
+        } // add all vertices to toGraph
+
+        for(Edge tmpEdge : edgeList){
+
+            toGraph.insertEdge(
+                    toGraph.retrieveVertex(tmpEdge.getFromVertex().getData().id)
+                    ,toGraph.retrieveVertex(tmpEdge.getToVertex().getData().id)
+                    ,tmpEdge.getWeight());
+
+        }
+
+
+        toGraph.insertEdge(toGraph.retrieveVertex(edge.getFromVertex().getData().id)
+                ,toGraph.retrieveVertex(edge.getToVertex().getData().id)
+                ,edge.getWeight());
+
+        return true;
     }
 
     // Using DFS Concept
