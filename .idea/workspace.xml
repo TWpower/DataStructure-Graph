@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ec66a69-956a-4354-96e0-fc5032def6c7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GraphSimulation/Main.class" afterPath="$PROJECT_DIR$/out/production/GraphSimulation/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GraphSimulation/impl/WeightUnDirectedGraph.class" afterPath="$PROJECT_DIR$/out/production/GraphSimulation/impl/WeightUnDirectedGraph.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/impl/UnDirectedGraph.java" afterPath="$PROJECT_DIR$/src/impl/UnDirectedGraph.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/impl/WeightUnDirectedGraph.java" afterPath="$PROJECT_DIR$/src/impl/WeightUnDirectedGraph.java" />
     </list>
     <ignored path="GraphSimulation.iws" />
@@ -36,47 +33,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6562261">
-              <caret line="332" column="29" selection-start-line="332" selection-start-column="29" selection-end-line="332" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WeightUnDirectedGraph.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WeightUnDirectedGraph.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/impl/WeightUnDirectedGraph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="868" column="69" selection-start-line="868" selection-start-column="69" selection-end-line="868" selection-end-column="69" />
-              <folding>
-                <element signature="method#WeightUnDirectedGraph#0;class#WeightUnDirectedGraph#0" expanded="false" />
-                <element signature="method#insertVertex#0;class#WeightUnDirectedGraph#0" expanded="false" />
-                <element signature="method#deleteVertex#0;class#WeightUnDirectedGraph#0" expanded="false" />
-                <element signature="method#__insertEdge#0;class#WeightUnDirectedGraph#0" expanded="false" />
-                <element signature="method#insertEdge#0;class#WeightUnDirectedGraph#0" expanded="false" />
-                <element signature="method#__deleteEdge#0;class#WeightUnDirectedGraph#0" expanded="false" />
-                <element signature="method#deleteEdge#0;class#WeightUnDirectedGraph#0" expanded="false" />
-                <element signature="method#retrieveVertex#0;class#WeightUnDirectedGraph#0" expanded="false" />
-                <element signature="method#depthFirstSearch#0;class#WeightUnDirectedGraph#0" expanded="false" />
-                <element signature="method#depthFirstSerachByStack#0;class#WeightUnDirectedGraph#0" expanded="false" />
-                <element signature="method#depthFirstSearchByRecursion#0;class#WeightUnDirectedGraph#0" expanded="false" />
-                <element signature="method#__depthVisit#0;class#WeightUnDirectedGraph#0" expanded="false" />
-                <element signature="method#breadthFirstSearch#0;class#WeightUnDirectedGraph#0" expanded="false" />
-                <element signature="method#numberOfVertices#0;class#WeightUnDirectedGraph#0" expanded="false" />
-                <element signature="method#printAllVertices#0;class#WeightUnDirectedGraph#0" expanded="false" />
-                <element signature="method#printEdges#0;class#WeightUnDirectedGraph#0" expanded="false" />
-                <element signature="method#printGraph#0;class#WeightUnDirectedGraph#0" expanded="false" />
-                <element signature="method#printAdjacencyMatrix#0;class#WeightUnDirectedGraph#0" expanded="false" />
-                <element signature="method#makeAdjacencyMatrix#0;class#WeightUnDirectedGraph#0" expanded="false" />
-                <element signature="method#MSTByKruskal#0;class#WeightUnDirectedGraph#0" expanded="false" />
-                <element signature="method#sameEdge#0;class#WeightUnDirectedGraph#0" expanded="false" />
-                <element signature="method#MSTByPrim#0;class#WeightUnDirectedGraph#0" expanded="false" />
-                <element signature="method#insertEdgeToList#0;class#WeightUnDirectedGraph#0" expanded="false" />
-                <element signature="method#hasCycle#0;class#WeightUnDirectedGraph#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.315508">
+              <caret line="524" column="94" selection-start-line="524" selection-start-column="94" selection-end-line="524" selection-end-column="94" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -85,25 +57,10 @@
         <entry file="file://$PROJECT_DIR$/src/impl/DirectedGraph.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="121" column="55" selection-start-line="121" selection-start-column="55" selection-end-line="121" selection-end-column="55" />
+              <caret line="224" column="0" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
               <folding>
                 <element signature="docComment;class#DirectedGraph#0" expanded="false" />
-                <element signature="method#DirectedGraph#0;class#DirectedGraph#0" expanded="false" />
-                <element signature="method#insertVertex#0;class#DirectedGraph#0" expanded="false" />
-                <element signature="method#deleteVertex#0;class#DirectedGraph#0" expanded="false" />
-                <element signature="method#deleteEdge#0;class#DirectedGraph#0" expanded="false" />
-                <element signature="method#retrieveVertex#0;class#DirectedGraph#0" expanded="false" />
-                <element signature="method#depthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
-                <element signature="method#depthFirstSerachByStack#0;class#DirectedGraph#0" expanded="false" />
-                <element signature="method#depthFirstSearchByRecursion#0;class#DirectedGraph#0" expanded="false" />
-                <element signature="method#__depthVisit#0;class#DirectedGraph#0" expanded="false" />
-                <element signature="method#breadthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
-                <element signature="method#numberOfVertices#0;class#DirectedGraph#0" expanded="false" />
-                <element signature="method#printAllVertices#0;class#DirectedGraph#0" expanded="false" />
                 <element signature="method#printEdges#0;class#DirectedGraph#0" expanded="false" />
-                <element signature="method#printGraph#0;class#DirectedGraph#0" expanded="false" />
-                <element signature="method#printAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
-                <element signature="method#makeAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -113,7 +70,7 @@
         <entry file="file://$PROJECT_DIR$/src/impl/WeightDirectedGraph.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="755" column="94" selection-start-line="755" selection-start-column="94" selection-end-line="755" selection-end-column="94" />
+              <caret line="353" column="0" selection-start-line="353" selection-start-column="0" selection-end-line="353" selection-end-column="0" />
               <folding>
                 <element signature="method#insertVertex#0;class#WeightDirectedGraph#0" expanded="false" />
                 <element signature="method#deleteVertex#0;class#WeightDirectedGraph#0" expanded="false" />
@@ -130,9 +87,6 @@
                 <element signature="method#printGraph#0;class#WeightDirectedGraph#0" expanded="false" />
                 <element signature="method#printAdjacencyMatrix#0;class#WeightDirectedGraph#0" expanded="false" />
                 <element signature="method#makeAdjacencyMatrix#0;class#WeightDirectedGraph#0" expanded="false" />
-                <element signature="method#ShortestPathByBellman_Ford#0;class#WeightDirectedGraph#0" expanded="false" />
-                <element signature="method#ShortestPathByFloyd_Warshall#0;class#WeightDirectedGraph#0" expanded="false" />
-                <element signature="method#makeAdjacencyMatrixForSP#0;class#WeightDirectedGraph#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -143,7 +97,62 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <folding>
+                <element signature="e#706#707#0" expanded="true" />
+                <element signature="e#734#735#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Data.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/base/Data.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Distance.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/base/Distance.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="42" column="40" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Edge.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/base/Edge.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ICompare.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/base/ICompare.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UnDirectedGraph.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/impl/UnDirectedGraph.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="258" column="0" selection-start-line="258" selection-start-column="0" selection-end-line="258" selection-end-column="0" />
+              <folding>
+                <element signature="method#depthFirstSerachByStack#0;class#UnDirectedGraph#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -176,11 +185,11 @@
         <option value="$PROJECT_DIR$/src/base/Data.java" />
         <option value="$PROJECT_DIR$/src/base/Vertex.java" />
         <option value="$PROJECT_DIR$/src/impl/DirectedGraph.java" />
-        <option value="$PROJECT_DIR$/src/impl/UnDirectedGraph.java" />
         <option value="$PROJECT_DIR$/src/base/Edge.java" />
         <option value="$PROJECT_DIR$/src/impl/WeightDirectedGraph.java" />
-        <option value="$PROJECT_DIR$/src/impl/WeightUnDirectedGraph.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/impl/UnDirectedGraph.java" />
+        <option value="$PROJECT_DIR$/src/impl/WeightUnDirectedGraph.java" />
       </list>
     </option>
   </component>
@@ -761,12 +770,12 @@
       <workItem from="1447748468346" duration="1574000" />
       <workItem from="1447758841902" duration="3462000" />
       <workItem from="1447805724925" duration="7195000" />
-      <workItem from="1447841628305" duration="18884000" />
+      <workItem from="1447841628305" duration="19608000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="244237000" />
+    <option name="totallyTimeSpent" value="244961000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -820,42 +829,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/impl/WeightUnDirectedGraph.java</url>
-          <line>807</line>
-          <properties />
-          <option name="timeStamp" value="256" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/impl/WeightUnDirectedGraph.java</url>
-          <line>833</line>
-          <properties />
-          <option name="timeStamp" value="257" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/impl/WeightUnDirectedGraph.java</url>
-          <line>800</line>
-          <properties />
-          <option name="timeStamp" value="258" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/impl/WeightUnDirectedGraph.java</url>
-          <line>836</line>
-          <properties />
-          <option name="timeStamp" value="259" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/impl/WeightUnDirectedGraph.java</url>
-          <line>834</line>
-          <properties />
-          <option name="timeStamp" value="260" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="261" />
+      <option name="time" value="264" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -886,22 +863,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#DirectedGraph#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#insertVertex#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#deleteVertex#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#deleteEdge#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#retrieveVertex#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSerachByStack#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSearchByRecursion#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#__depthVisit#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#breadthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#numberOfVertices#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#printAllVertices#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printEdges#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#printGraph#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#printAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#makeAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -932,25 +894,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="407" column="30" selection-start-line="407" selection-start-column="30" selection-end-line="407" selection-end-column="30" />
           <folding>
-            <element signature="method#UnDirectedGraph#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#insertVertex#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#deleteVertex#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#__insertEdge#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#insertEdge#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#__deleteEdge#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#deleteEdge#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#retrieveVertex#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSearch#0;class#UnDirectedGraph#0" expanded="false" />
             <element signature="method#depthFirstSerachByStack#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSearchByRecursion#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#__depthVisit#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#breadthFirstSearch#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#numberOfVertices#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#printAllVertices#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#printEdges#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#printGraph#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#printAdjacencyMatrix#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#makeAdjacencyMatrix#0;class#UnDirectedGraph#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -983,9 +927,6 @@
             <element signature="method#printGraph#0;class#WeightDirectedGraph#0" expanded="false" />
             <element signature="method#printAdjacencyMatrix#0;class#WeightDirectedGraph#0" expanded="false" />
             <element signature="method#makeAdjacencyMatrix#0;class#WeightDirectedGraph#0" expanded="false" />
-            <element signature="method#ShortestPathByBellman_Ford#0;class#WeightDirectedGraph#0" expanded="false" />
-            <element signature="method#ShortestPathByFloyd_Warshall#0;class#WeightDirectedGraph#0" expanded="false" />
-            <element signature="method#makeAdjacencyMatrixForSP#0;class#WeightDirectedGraph#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1011,22 +952,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#DirectedGraph#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#insertVertex#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#deleteVertex#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#deleteEdge#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#retrieveVertex#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSerachByStack#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSearchByRecursion#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#__depthVisit#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#breadthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#numberOfVertices#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#printAllVertices#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printEdges#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#printGraph#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#printAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#makeAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1074,22 +1000,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#DirectedGraph#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#insertVertex#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#deleteVertex#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#deleteEdge#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#retrieveVertex#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSerachByStack#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSearchByRecursion#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#__depthVisit#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#breadthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#numberOfVertices#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#printAllVertices#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printEdges#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#printGraph#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#printAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#makeAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1130,22 +1041,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#DirectedGraph#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#insertVertex#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#deleteVertex#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#deleteEdge#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#retrieveVertex#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSerachByStack#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSearchByRecursion#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#__depthVisit#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#breadthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#numberOfVertices#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#printAllVertices#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printEdges#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#printGraph#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#printAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#makeAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1186,22 +1082,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#DirectedGraph#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#insertVertex#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#deleteVertex#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#deleteEdge#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#retrieveVertex#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSerachByStack#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSearchByRecursion#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#__depthVisit#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#breadthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#numberOfVertices#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#printAllVertices#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printEdges#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#printGraph#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#printAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#makeAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1242,22 +1123,7 @@
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#DirectedGraph#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#insertVertex#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#deleteVertex#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#deleteEdge#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#retrieveVertex#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSerachByStack#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSearchByRecursion#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#__depthVisit#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#breadthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#numberOfVertices#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#printAllVertices#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printEdges#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#printGraph#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#printAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#makeAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1298,22 +1164,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#DirectedGraph#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#insertVertex#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#deleteVertex#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#deleteEdge#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#retrieveVertex#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSerachByStack#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSearchByRecursion#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#__depthVisit#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#breadthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#numberOfVertices#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#printAllVertices#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printEdges#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#printGraph#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#printAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#makeAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1340,38 +1191,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/impl/UnDirectedGraph.java">
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="115" column="69" selection-start-line="115" selection-start-column="69" selection-end-line="115" selection-end-column="69" />
-          <folding>
-            <element signature="method#UnDirectedGraph#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#insertVertex#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#deleteVertex#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#__insertEdge#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#insertEdge#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#__deleteEdge#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#deleteEdge#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#retrieveVertex#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSearch#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSerachByStack#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSearchByRecursion#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#__depthVisit#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#breadthFirstSearch#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#numberOfVertices#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#printAllVertices#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#printEdges#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#printGraph#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#printAdjacencyMatrix#0;class#UnDirectedGraph#0" expanded="false" />
-            <element signature="method#makeAdjacencyMatrix#0;class#UnDirectedGraph#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/base/Edge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+          <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -1388,6 +1211,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="40" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/base/Edge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1395,31 +1227,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/base/Vertex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding>
+            <element signature="e#706#707#0" expanded="true" />
+            <element signature="e#734#735#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/impl/DirectedGraph.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="121" column="55" selection-start-line="121" selection-start-column="55" selection-end-line="121" selection-end-column="55" />
+          <caret line="224" column="0" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#DirectedGraph#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#insertVertex#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#deleteVertex#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#deleteEdge#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#retrieveVertex#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSerachByStack#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSearchByRecursion#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#__depthVisit#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#breadthFirstSearch#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#numberOfVertices#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#printAllVertices#0;class#DirectedGraph#0" expanded="false" />
             <element signature="method#printEdges#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#printGraph#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#printAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
-            <element signature="method#makeAdjacencyMatrix#0;class#DirectedGraph#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/impl/UnDirectedGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="258" column="0" selection-start-line="258" selection-start-column="0" selection-end-line="258" selection-end-column="0" />
+          <folding>
+            <element signature="method#depthFirstSerachByStack#0;class#UnDirectedGraph#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1427,7 +1266,7 @@
     <entry file="file://$PROJECT_DIR$/src/impl/WeightDirectedGraph.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="755" column="94" selection-start-line="755" selection-start-column="94" selection-end-line="755" selection-end-column="94" />
+          <caret line="353" column="0" selection-start-line="353" selection-start-column="0" selection-end-line="353" selection-end-column="0" />
           <folding>
             <element signature="method#insertVertex#0;class#WeightDirectedGraph#0" expanded="false" />
             <element signature="method#deleteVertex#0;class#WeightDirectedGraph#0" expanded="false" />
@@ -1444,58 +1283,14 @@
             <element signature="method#printGraph#0;class#WeightDirectedGraph#0" expanded="false" />
             <element signature="method#printAdjacencyMatrix#0;class#WeightDirectedGraph#0" expanded="false" />
             <element signature="method#makeAdjacencyMatrix#0;class#WeightDirectedGraph#0" expanded="false" />
-            <element signature="method#ShortestPathByBellman_Ford#0;class#WeightDirectedGraph#0" expanded="false" />
-            <element signature="method#ShortestPathByFloyd_Warshall#0;class#WeightDirectedGraph#0" expanded="false" />
-            <element signature="method#makeAdjacencyMatrixForSP#0;class#WeightDirectedGraph#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/base/Vertex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/impl/WeightUnDirectedGraph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="868" column="69" selection-start-line="868" selection-start-column="69" selection-end-line="868" selection-end-column="69" />
-          <folding>
-            <element signature="method#WeightUnDirectedGraph#0;class#WeightUnDirectedGraph#0" expanded="false" />
-            <element signature="method#insertVertex#0;class#WeightUnDirectedGraph#0" expanded="false" />
-            <element signature="method#deleteVertex#0;class#WeightUnDirectedGraph#0" expanded="false" />
-            <element signature="method#__insertEdge#0;class#WeightUnDirectedGraph#0" expanded="false" />
-            <element signature="method#insertEdge#0;class#WeightUnDirectedGraph#0" expanded="false" />
-            <element signature="method#__deleteEdge#0;class#WeightUnDirectedGraph#0" expanded="false" />
-            <element signature="method#deleteEdge#0;class#WeightUnDirectedGraph#0" expanded="false" />
-            <element signature="method#retrieveVertex#0;class#WeightUnDirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSearch#0;class#WeightUnDirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSerachByStack#0;class#WeightUnDirectedGraph#0" expanded="false" />
-            <element signature="method#depthFirstSearchByRecursion#0;class#WeightUnDirectedGraph#0" expanded="false" />
-            <element signature="method#__depthVisit#0;class#WeightUnDirectedGraph#0" expanded="false" />
-            <element signature="method#breadthFirstSearch#0;class#WeightUnDirectedGraph#0" expanded="false" />
-            <element signature="method#numberOfVertices#0;class#WeightUnDirectedGraph#0" expanded="false" />
-            <element signature="method#printAllVertices#0;class#WeightUnDirectedGraph#0" expanded="false" />
-            <element signature="method#printEdges#0;class#WeightUnDirectedGraph#0" expanded="false" />
-            <element signature="method#printGraph#0;class#WeightUnDirectedGraph#0" expanded="false" />
-            <element signature="method#printAdjacencyMatrix#0;class#WeightUnDirectedGraph#0" expanded="false" />
-            <element signature="method#makeAdjacencyMatrix#0;class#WeightUnDirectedGraph#0" expanded="false" />
-            <element signature="method#MSTByKruskal#0;class#WeightUnDirectedGraph#0" expanded="false" />
-            <element signature="method#sameEdge#0;class#WeightUnDirectedGraph#0" expanded="false" />
-            <element signature="method#MSTByPrim#0;class#WeightUnDirectedGraph#0" expanded="false" />
-            <element signature="method#insertEdgeToList#0;class#WeightUnDirectedGraph#0" expanded="false" />
-            <element signature="method#hasCycle#0;class#WeightUnDirectedGraph#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6562261">
-          <caret line="332" column="29" selection-start-line="332" selection-start-column="29" selection-end-line="332" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.315508">
+          <caret line="524" column="94" selection-start-line="524" selection-start-column="94" selection-end-line="524" selection-end-column="94" />
           <folding />
         </state>
       </provider>

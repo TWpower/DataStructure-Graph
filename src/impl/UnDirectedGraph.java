@@ -256,40 +256,32 @@ public class UnDirectedGraph {
 
         }
 
-        // ???????? vertex???? ???
         for (int indexOfVertexList = 0; indexOfVertexList < vertices.size(); indexOfVertexList++) {
 
             Vertex currentGraphVertex = vertices.get(indexOfVertexList);
 
-            // processed?? 0????
             if (currentGraphVertex.processed < 2) {
                 if (currentGraphVertex.processed < 1) {
 
                     stack.push(currentGraphVertex);
-                    // ????? ???
                     currentGraphVertex.processed = 1;
                 }
             }
 
-            // ?????? ?? ?????? ???
             while (!stack.isEmpty()) {
 
                 Vertex vertexFromStack = stack.pop();
-                //Stack ???? ?????? 2?? flag ???
                 if(vertexFromStack.processed != 2) {
                     vertexFromStack.processed = 2;
                     System.out.print(vertexFromStack.getData().id + " ");
                 }
 
 
-                // ???? vertexFromStack?? ?????? ???? ????????? ???? stack?? ??????
                 for (int edgeIndex = vertexFromStack.getEdges().size()-1;
                      edgeIndex >= 0 ; edgeIndex--) {
 
-                    // ?????? ???? ????? ???
                     if (vertexFromStack.getEdges().get(edgeIndex).getToVertex().processed != 2) {
                         stack.push(vertexFromStack.getEdges().get(edgeIndex).getToVertex());
-                        // ????? ?????????
                         vertexFromStack.getEdges().get(edgeIndex).getToVertex().processed = 1;
                     }
                 }
@@ -367,49 +359,40 @@ public class UnDirectedGraph {
 
     public void breadthFirstSearch() {
 
-        // ?????????? Queue?? LinkedList?? ???? ??????? ??? ?? ?? ??? LinkedList ???
         LinkedList<Vertex> queue = new LinkedList<>();
 
         System.out.print("BFS : ");
 
-        // vertex???? processed?? ??? 0???? ???
         for (int indexOfVertexList = 0; indexOfVertexList < vertices.size(); indexOfVertexList++) {
 
             vertices.get(indexOfVertexList).processed = 0;
 
         }
 
-        // ???????? vertex???? ???
         for (int indexOfVertexList = 0; indexOfVertexList < vertices.size(); indexOfVertexList++) {
 
             Vertex currentGraphVertex = vertices.get(indexOfVertexList);
 
-            // processed?? 0????
             if (currentGraphVertex.processed < 2) {
                 if (currentGraphVertex.processed < 1) {
 
-                    //queue?? ???
                     queue.add(currentGraphVertex);
                     currentGraphVertex.processed = 1;
                 }
             }
 
-            // queue?? ?? ?????? ???
             while (!queue.isEmpty()) {
 
                 Vertex vertexFromQueue = queue.removeFirst();
-                //Stack ???? ?????? 2?? flag ???
+
                 vertexFromQueue.processed = 2;
                 System.out.print(vertexFromQueue.getData().id + " ");
 
-                // ???? vertexFromQueue?? ?????? ???? ????????? ???? queue?? ??????
                 for (int edgeIndex = 0; edgeIndex < vertexFromQueue.getEdges().size(); edgeIndex++) {
 
-                    // queue?? ??? ?????? ?????
                     if (vertexFromQueue.getEdges().get(edgeIndex).getToVertex().processed == 0)
                         queue.add(vertexFromQueue.getEdges().get(edgeIndex).getToVertex());
 
-                    // queue?? ?????????
                     vertexFromQueue.getEdges().get(edgeIndex).getToVertex().processed = 1;
 
                 }
@@ -427,12 +410,10 @@ public class UnDirectedGraph {
 
     public void printAllVertices() {
 
-        // graph?? ?????
         if (size == 0) {
             System.out.print("Nothing in Graph");
         }
 
-        // graph?? ?????
         else {
 
             for (int index = 0; index < vertices.size(); index++) {
@@ -448,12 +429,10 @@ public class UnDirectedGraph {
 
     public void printEdges(Vertex vertex) {
 
-        // vertex?? ????? ???
         if (vertices.indexOf(vertex) == -1) {
             System.out.print("No Such Vertex");
         } else {
 
-            // vertex?? edge?? ????? ???
             if (vertex.getEdges().size() == 0) {
                 System.out.print("No Edges");
             } else {
@@ -472,12 +451,10 @@ public class UnDirectedGraph {
 
     public void printGraph() {
 
-        // graph?? ??????
         if (size == 0) {
             System.out.println("Nothing in Graph");
         }
 
-        // graph?? ????
         else {
 
             // vertex
