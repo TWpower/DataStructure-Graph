@@ -522,7 +522,6 @@ public class WeightUnDirectedGraph {
                     , tmpGraph.retrieveVertex(edge.getToVertex().getData().id)
                     , edge.getWeight());
 
-
             // Check if there is a cycle
             if (tmpGraph.hasCycle()) {
                 // if there is a cycle
@@ -532,10 +531,7 @@ public class WeightUnDirectedGraph {
                         , tmpGraph.retrieveVertex(edge.getToVertex().getData().id));
                 System.out.println("Cycle Exist");
             }
-
         }
-
-
         return tmpGraph;
     }
 
@@ -562,9 +558,7 @@ public class WeightUnDirectedGraph {
 
         //Insert First Vertex Edges
         for(Edge edge : currentVertex.getEdges()){
-
             insertEdgeToList(edgeList, edge);
-
         }
 
         // keep make graph(actually tree) until edgeList size get to 0
@@ -592,7 +586,6 @@ public class WeightUnDirectedGraph {
                 insertEdgeToList(edgeList, tmpEdge);
             }
         }
-
         return tmpGraph;
     }
 
@@ -626,7 +619,6 @@ public class WeightUnDirectedGraph {
             if(index >= graphLinkedList.size())
                 index = 0;
 
-
             // For each component C of T:
             currentGraph = graphLinkedList.get(index);
 
@@ -645,21 +637,16 @@ public class WeightUnDirectedGraph {
 
                         if(currentGraph.retrieveVertex(edge.getToVertex().getData().id) == null)
                             insertEdgeToList(edgeList, edge);
-
                     }
-
                 }
 
                 int graphIndex = findGraphIndex(graphLinkedList, edgeList.getFirst().getToVertex());
 
-                // Add the cheapest edge in S to T
-
+            // Add the cheapest edge in S to T
                 if(mergeGraph(currentGraph, graphLinkedList.get(graphIndex), edgeList.removeFirst()))
                     graphLinkedList.remove(graphIndex);
 
             index++;
-
-
         }
 
         return graphLinkedList.getFirst();

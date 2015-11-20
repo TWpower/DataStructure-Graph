@@ -726,17 +726,18 @@ public class WeightDirectedGraph {
                 for(Edge edge : vertex.getEdges()){
 
                     //현재 vertex까지의 거리에서 연결된 edge의 가중치를 더한게 향하고 있는 Vertex까지의 거리보다 짧다면
-                    if(d[idToArrayIndex.get(vertex.getData().id)] + edge.getWeight() < d[idToArrayIndex.get(edge.getToVertex().getData().id)]){
+                    if(d[idToArrayIndex.get(vertex.getData().id)] + edge.getWeight()
+                            < d[idToArrayIndex.get(edge.getToVertex().getData().id)]){
 
                         //그 값을 갱신해주고 이전 위치를 기억한다(p)
-                        d[idToArrayIndex.get(edge.getToVertex().getData().id)] = d[idToArrayIndex.get(vertex.getData().id)] + edge.getWeight();
-                        p[idToArrayIndex.get(edge.getToVertex().getData().id)] = idToArrayIndex.get(vertex.getData().id);
+                        d[idToArrayIndex.get(edge.getToVertex().getData().id)]
+                                = d[idToArrayIndex.get(vertex.getData().id)] + edge.getWeight();
+
+                        p[idToArrayIndex.get(edge.getToVertex().getData().id)]
+                                = idToArrayIndex.get(vertex.getData().id);
                     }
-
                 }
-
             }
-
         }
 
         Distance distance = new Distance();
@@ -855,9 +856,7 @@ public class WeightDirectedGraph {
 
             if(tmpVertex.equals(startVertex))
                 break;
-
         }
-
 
         return distance;
     }

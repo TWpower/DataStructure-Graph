@@ -12,7 +12,6 @@ public class Distance {
     private int distance;
     private LinkedList<Vertex> routes;
 
-
     //Constructor
 
     public Distance(){
