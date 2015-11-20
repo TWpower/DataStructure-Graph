@@ -546,7 +546,6 @@ public class WeightDirectedGraph {
     }
 
     // Edge Weight가 음수이지 않은 경우!
-    // Need to be amended...
     public Distance ShortestPathByDijkstra(Vertex startVertex, Vertex destinationVertex){
 
         // 값이 있는지 확인
@@ -565,6 +564,7 @@ public class WeightDirectedGraph {
 
         }
 
+        //배열의 index와 Vertex의 id를 matching 시키기 위한 해시맵
         HashMap<Integer, Integer> arrayIndexToId = new HashMap<>();
 
         //해시맵을 통해서 대응 시킴
@@ -621,6 +621,7 @@ public class WeightDirectedGraph {
 
         while(before.size() != 0){
 
+
             int shortestPathArrayIndex=idToArrayIndex.get(before.getFirst().getData().id);
 
             // before에 남겨져 있는 vertex들 중에서 출발점으로부터 거리가 가장 짧은 vertex의 배열 index 값을 찾는다
@@ -652,8 +653,10 @@ public class WeightDirectedGraph {
 
         Distance distance = new Distance();
 
+        // 거리 추가
         distance.setDistance(d[destinationVertexArrayIndex]);
 
+        // 역추적을 통해서 경로 찾기
         int pivot = destinationVertexArrayIndex;
 
         while(pivot != -1){
@@ -667,7 +670,7 @@ public class WeightDirectedGraph {
         return distance;
     }
 
-    // Need to be amended...
+    // negative weight cycle이 없는 경우!
     public Distance ShortestPathByBellman_Ford(Vertex startVertex, Vertex destinationVertex){
 
         // 값이 있는지 확인
@@ -686,6 +689,7 @@ public class WeightDirectedGraph {
 
         }
 
+        //배열의 index와 Vertex의 id를 matching 시키기 위한 해시맵
         HashMap<Integer, Integer> arrayIndexToId = new HashMap<>();
 
         //해시맵을 통해서 대응 시킴
@@ -737,10 +741,12 @@ public class WeightDirectedGraph {
 
         Distance distance = new Distance();
 
+        // 거리 추가
         distance.setDistance(d[destinationVertexArrayIndex]);
 
         int pivot = destinationVertexArrayIndex;
 
+        // 역추적을 통해서 경로 찾기
         while(pivot != -1){
 
             distance.getRoutes().addFirst(retrieveVertex(arrayIndexToId.get(pivot)));
@@ -752,7 +758,7 @@ public class WeightDirectedGraph {
         return distance;
     }
 
-    // Need to be amended...
+    // negative weight cycle이 없는 경우!
     public Distance ShortestPathByFloyd_Warshall(Vertex startVertex, Vertex destinationVertex){
 
 
@@ -772,6 +778,7 @@ public class WeightDirectedGraph {
 
         }
 
+        //배열의 index와 Vertex의 id를 matching 시키기 위한 해시맵
         HashMap<Integer, Integer> arrayIndexToId = new HashMap<>();
 
         //해시맵을 통해서 대응 시킴
@@ -783,9 +790,9 @@ public class WeightDirectedGraph {
         }
 
 
+        // 계산을 위한 인접 행렬
         int [][] weightMatrix = makeAdjacencyMatrixForSP();
 
-        // TODO : 아래 알고리즘 설명해야함 -> PT에서 기본으로 설명
         int i, j, stop;
 
         for (stop = 0; stop < vertices.size(); stop++) {
@@ -812,16 +819,20 @@ public class WeightDirectedGraph {
 
         }
 
+        // 경로가 존재하는 경우
 
         Distance distance = new Distance();
 
+        // 거리 추가
         distance.setDistance(weightMatrix[idToArrayIndex.get(startVertex.getData().id)][idToArrayIndex.get(destinationVertex.getData().id)]);
 
         distance.getRoutes().addFirst(destinationVertex);
 
-        //처음에 목적지 id에 해당하는 index를 track index로 지정
+        // 처음에 목적지 id에 해당하는 index를 track index로 지정
+        // 역추적을 통해서 경로 찾기
         int trackIndex = idToArrayIndex.get(destinationVertex.getData().id);
 
+        // 목적지(열)를 기준으로 행렬의 최소값을 갖는 출발지(행)를 찾는 방식으로 Tracking
         while(true){
 
             int trackRow = 0;
@@ -879,6 +890,7 @@ public class WeightDirectedGraph {
             int [][] adjencyMatrix = new int[sizeOfMatrix][sizeOfMatrix];
 
             //거리가 연결되지 않은 부분은 거리를 INF로 설정
+            // -> makeAdjacencyMatrix()와 다른 부분
             for (int[] row: adjencyMatrix)
                 Arrays.fill(row, INF);
 
@@ -903,8 +915,6 @@ public class WeightDirectedGraph {
                 }
 
             }
-
-
             return adjencyMatrix;
         }
 

@@ -483,67 +483,26 @@ public class WeightUnDirectedGraph {
     }
 
     // Point : Edge
+    // 1. Put edges to the edgeList(sort by weight) (frankly it is Minimum Heap)
+    // 2. remove edge element from heap and add to the graph
+    // 3. if there is a cycle then remove that edge(which we inserted at step 2)
     public WeightUnDirectedGraph MSTByKruskal() {
 
 
         if (vertices.size() == 0)
             return null;
 
-
         WeightUnDirectedGraph tmpGraph = new WeightUnDirectedGraph();
 
         // Use this as a Heap
         LinkedList<Edge> edgeList = new LinkedList<>();
 
-
-
         // Put edges to the edgeList(sort by weight)
         for (Vertex currentVertex : vertices) {
             for (Edge currentEdge : currentVertex.getEdges()) {
-
                 insertEdgeToList(edgeList,currentEdge);
-/*
-                int indexOfVertexList = 0;
-                boolean hasSameEdge = false;
-
-                // First
-                if (edgeList.size() == 0) {
-                    edgeList.add(currentEdge);
-                    continue;
-                }
-
-                //Last
-                if (currentEdge.getWeight() >= edgeList.getLast().getWeight()
-                        && !sameEdge(currentEdge, edgeList.getLast())) {
-                    edgeList.add(currentEdge);
-                    continue;
-
-                }
-
-                // Find position of current edge
-                while (indexOfVertexList < edgeList.size() &&
-                        edgeList.get(indexOfVertexList).getWeight() <= currentEdge.getWeight()
-                        ) {
-
-                    // same weight and same edge => Same Edge -> do not add
-                    if (edgeList.get(indexOfVertexList).getWeight() == currentEdge.getWeight()
-                            &&
-                            sameEdge(currentEdge, edgeList.get(indexOfVertexList))) {
-                        hasSameEdge = true;
-                        break;
-                    }
-
-                    indexOfVertexList++;
-                }
-
-                if (hasSameEdge)
-                    continue;
-
-                edgeList.add(indexOfVertexList, currentEdge);
-*/
             }
         }
-
 
         // Make new Graph(Tree) by using edgeList
         while (!edgeList.isEmpty()) {
@@ -580,34 +539,6 @@ public class WeightUnDirectedGraph {
         return tmpGraph;
     }
 
-    //check if two edges are same
-    private boolean sameEdge(Edge edgeOne, Edge edgeTwo) {
-
-        // same weight and same pair of vertices => Same Edge
-
-        // check weight first
-        // if weight is different then different edge
-        if (edgeOne.getWeight() != edgeTwo.getWeight())
-            return false;
-
-        // v1 Edge1 v2
-        // v1 Edge2 v2
-        // weight checked before
-        if (edgeOne.getFromVertex().equals(edgeTwo.getFromVertex())
-                && edgeOne.getToVertex().equals(edgeTwo.getToVertex()))
-            return true;
-
-            // v1 Edge1 v2
-            // v2 Edge2 v1
-        else if (edgeOne.getFromVertex().equals(edgeTwo.getToVertex())
-                && edgeOne.getToVertex().equals(edgeTwo.getFromVertex()))
-            return true;
-
-        else
-            return false;
-
-    }
-
     // Point : Vertex
     // 1. Remove Edge from PQ
     // 2. check edge's toVertex is in Graph
@@ -636,7 +567,7 @@ public class WeightUnDirectedGraph {
 
         }
 
-
+        // keep make graph(actually tree) until edgeList size get to 0
         while (edgeList.size() != 0) {
 
             // First One is lowest Weight Edge
@@ -665,48 +596,14 @@ public class WeightUnDirectedGraph {
         return tmpGraph;
     }
 
-    // Similar To Heap
-    private boolean insertEdgeToList(LinkedList<Edge> edgeList, Edge edge) {
-
-        int indexOfVertexList = 0;
-        boolean hasSameEdge = false;
-
-        // First
-        if (edgeList.size() == 0) {
-            edgeList.add(edge);
-        }
-
-        //Last
-        if (edge.getWeight() >= edgeList.getLast().getWeight()
-                && !sameEdge(edge, edgeList.getLast())) {
-            edgeList.add(edge);
-        }
-
-        while (indexOfVertexList < edgeList.size() &&
-                edgeList.get(indexOfVertexList).getWeight() <= edge.getWeight()
-                ) {
-
-            // same weight and same edge => Same Edge -> do not add
-            if (edgeList.get(indexOfVertexList).getWeight() == edge.getWeight()
-                    &&
-                    sameEdge(edge, edgeList.get(indexOfVertexList))) {
-                hasSameEdge = true;
-                break;
-            }
-
-            indexOfVertexList++;
-        }
-
-        if(hasSameEdge) {
-            return false;
-        }
-
-        edgeList.add(indexOfVertexList, edge);
-        return true;
-
-    }
-
-    // Point : Forest
+    // Point : Forest to Tree
+    //
+    // While T has more than one component
+    //  For each component C of T :
+    //   Begin with an empty set of edges S
+    //   For each vertex v in C :
+    //    Find the cheapest edge from v to a vertex outside of C, and add it to S
+    //   Add the cheapest edge in S to T
     public WeightUnDirectedGraph MSTBySollin() {
 
        LinkedList<WeightUnDirectedGraph> graphLinkedList = new LinkedList<>();
@@ -768,6 +665,81 @@ public class WeightUnDirectedGraph {
         return graphLinkedList.getFirst();
     }
 
+    // Similar To Heap
+    // insert Edge to the edgeList, sorted by weight, do note insert same edge in the list
+    private boolean insertEdgeToList(LinkedList<Edge> edgeList, Edge edge) {
+
+        // index for list
+        int indexOfVertexList = 0;
+        // flag for SameEdge Checking
+        boolean hasSameEdge = false;
+
+        // First
+        if (edgeList.size() == 0) {
+            edgeList.add(edge);
+        }
+
+        //Last
+        if (edge.getWeight() >= edgeList.getLast().getWeight()
+                && !sameEdge(edge, edgeList.getLast())) {
+            edgeList.add(edge);
+        }
+
+        // find position of edge in edgeList(depends on weight)
+        while (indexOfVertexList < edgeList.size() &&
+                edgeList.get(indexOfVertexList).getWeight() <= edge.getWeight()
+                ) {
+
+            // same weight and same edge => Same Edge -> do not add
+            if (edgeList.get(indexOfVertexList).getWeight() == edge.getWeight()
+                    &&
+                    sameEdge(edge, edgeList.get(indexOfVertexList))) {
+                hasSameEdge = true;
+                break;
+            }
+
+            indexOfVertexList++;
+        }
+
+        // if edge is already in the edgeList then return false
+        if(hasSameEdge) {
+            return false;
+        }
+
+        edgeList.add(indexOfVertexList, edge);
+        return true;
+
+    }
+
+    //check if two edges are same
+    private boolean sameEdge(Edge edgeOne, Edge edgeTwo) {
+
+        // same weight and same pair of vertices => Same Edge
+
+        // check weight first
+        // if weight is different then different edge
+        if (edgeOne.getWeight() != edgeTwo.getWeight())
+            return false;
+
+        // v1 Edge1 v2
+        // v1 Edge2 v2
+        // weight checked before
+        if (edgeOne.getFromVertex().equals(edgeTwo.getFromVertex())
+                && edgeOne.getToVertex().equals(edgeTwo.getToVertex()))
+            return true;
+
+            // v1 Edge1 v2
+            // v2 Edge2 v1
+        else if (edgeOne.getFromVertex().equals(edgeTwo.getToVertex())
+                && edgeOne.getToVertex().equals(edgeTwo.getFromVertex()))
+            return true;
+
+        else
+            return false;
+
+    }
+
+    // find which graph has specific vertex in graphLinkedList
     private int findGraphIndex(LinkedList<WeightUnDirectedGraph> graphLinkedList ,Vertex vertex){
 
         int graphIndex =0;
@@ -779,22 +751,24 @@ public class WeightUnDirectedGraph {
               break;
         }
 
+        // return graph index in graphLinkedList
         return graphIndex;
     }
 
+    // merge toGraph and fromGraph, and put edge to the toGraph
     private boolean mergeGraph(WeightUnDirectedGraph toGraph, WeightUnDirectedGraph fromGraph, Edge edge){
 
-        // to에다가 from을 가져다가 붙임
-        // 두 그래프는 Disjoint이며 vertex와 edge가 모두 다르다
-
+        // Add "fromGraph" To "toGraph"
+        // Both graphs are disjoint!!
         LinkedList<Edge> edgeList = new LinkedList<>();
 
+        // move all vertices from fromGraph to toGraph
         for(int i = 0 ; i < fromGraph.size ; i ++){
 
             if(!toGraph.vertices.contains(fromGraph.vertices.get(i)))
             toGraph.insertVertex(new Data(fromGraph.vertices.get(i).getData().id));
 
-
+            // add all edges from fromGraph to toGraph
             for(Edge tmpEdge : fromGraph.vertices.get(i).getEdges()){
 
                 insertEdgeToList(edgeList, tmpEdge);
@@ -803,6 +777,7 @@ public class WeightUnDirectedGraph {
 
         } // add all vertices to toGraph
 
+        // insert all edges to the toGraph
         for(Edge tmpEdge : edgeList){
 
             toGraph.insertEdge(
@@ -812,7 +787,7 @@ public class WeightUnDirectedGraph {
 
         }
 
-
+        // insert "edge"(see above parameter) to the toGraph
         toGraph.insertEdge(toGraph.retrieveVertex(edge.getFromVertex().getData().id)
                 ,toGraph.retrieveVertex(edge.getToVertex().getData().id)
                 ,edge.getWeight());
@@ -821,6 +796,7 @@ public class WeightUnDirectedGraph {
     }
 
     // Using DFS Concept
+    // Check if graph has cycle
     private boolean hasCycle() {
 
         // set processed to 0
